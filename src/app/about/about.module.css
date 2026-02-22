@@ -1,0 +1,155 @@
+.page {
+  min-height: 100vh;
+  background: #f0f0ea;
+  color: #131415;
+  font-family:
+    "TT Hoves Pro Condensed", "Arial Narrow", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-weight: 300;
+}
+
+.page :where(h1, h2, h3, h4, h5, h6, p, a, li, span) {
+  font-weight: 300;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.heroSection {
+  padding-top: 10px;
+}
+
+.aboutTitle {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(110px, 24vw, 417px);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: #30bdff;
+}
+
+.introCopy {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  font-size: clamp(34px, 3vw, 56px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #1b1b1b;
+}
+
+.contentSection {
+  padding: 40px 0 44px;
+}
+
+.contentContainer {
+  width: min(1065px, 100%);
+  margin: 0 auto;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 521px) minmax(0, 478px);
+  gap: 40px 36px;
+  justify-content: center;
+  align-items: start;
+}
+
+.portraitPlaceholder {
+  width: 100%;
+  aspect-ratio: 521 / 623;
+  background: #737373;
+}
+
+.contentRight {
+  font-size: clamp(18px, 1.4vw, 20px);
+  line-height: 1.27;
+  letter-spacing: -0.01em;
+  color: #131415;
+}
+
+.contentRight p + p {
+  margin-top: 20px;
+}
+
+.resumeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 34px;
+  min-height: 45px;
+  padding: 0 12px;
+  background: #d1d1c9;
+  color: #131a26;
+  font-size: clamp(22px, 1.8vw, 26px);
+  line-height: 1.15;
+}
+
+@media (max-width: 1100px) {
+  .introCopy {
+    font-size: clamp(26px, 2.8vw, 44px);
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .portraitPlaceholder {
+    max-width: 640px;
+  }
+
+  .contentRight {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .heroSection {
+    padding-top: 4px;
+  }
+
+  .aboutTitle {
+    text-align: left;
+    font-size: min(30vw, 210px);
+  }
+
+  .introCopy {
+    margin-top: 12px;
+    align-items: flex-start;
+    text-align: left;
+    font-size: 24px;
+  }
+
+  .contentSection {
+    padding: 20px 0 28px;
+  }
+
+  .contentGrid {
+    gap: 20px;
+  }
+
+  .contentRight {
+    font-size: 18px;
+  }
+
+  .contentRight p + p {
+    margin-top: 16px;
+  }
+
+  .resumeButton {
+    margin-top: 24px;
+    min-height: 40px;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,167 @@
+.header {
+  position: relative;
+  z-index: 20;
+  padding-top: 40px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.navWrap {
+  position: relative;
+  z-index: 1101;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+
+.navWrapDefault {
+  color: #1d2430;
+}
+
+.navWrapInverted {
+  color: #f0f0ea;
+}
+
+.desktopLinks {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.navGroup {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.menuButton {
+  display: none;
+  width: 44px;
+  height: 34px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+}
+
+.menuLine {
+  display: block;
+  width: 26px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition:
+    transform 0.24s ease,
+    opacity 0.2s ease;
+}
+
+.menuButtonOpen .menuLine:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menuButtonOpen .menuLine:nth-child(2) {
+  opacity: 0;
+}
+
+.menuButtonOpen .menuLine:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobileMenu {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding-top: 24px;
+  }
+
+  .navWrap {
+    justify-content: flex-end;
+  }
+
+  .desktopLinks {
+    display: none;
+  }
+
+  .menuButton {
+    display: inline-flex;
+  }
+
+  .mobileMenu {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.28s ease,
+      visibility 0.28s ease;
+  }
+
+  .mobileMenuOpen {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .mobileMenuDefault {
+    background: #f0f0ea;
+    color: #1d2430;
+  }
+
+  .mobileMenuInverted {
+    background: #131415;
+    color: #f0f0ea;
+  }
+
+  .mobileNavList {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    padding: 120px 32px 32px;
+  }
+
+  .mobileNavItem {
+    text-transform: uppercase;
+    font-size: clamp(34px, 7vw, 68px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .mobileNavList {
+    align-items: flex-start;
+    gap: 16px;
+    padding: 100px 16px 24px;
+  }
+
+  .mobileNavItem {
+    font-size: clamp(28px, 12vw, 52px);
+  }
+}

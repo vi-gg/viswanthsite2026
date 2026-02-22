@@ -1,141 +1,252 @@
 .page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
   min-height: 100vh;
+  background: #f0f0ea;
+  color: #131a26;
+  font-family:
+    "TT Hoves Pro Condensed", "Arial Narrow", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-weight: 300;
+}
+
+.page :where(h1, h2, h3, h4, h5, h6, p, a, li, span) {
+  font-weight: 300;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.introSection {
+  padding-top: 24px;
+}
+
+.introCopy {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: clamp(24px, 2vw, 40px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #1b1b1b;
+}
+
+.heroImageWrap {
+  margin-top: 18px;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.workSection {
+  padding: 30px 0 24px;
+}
+
+.workTitle {
+  margin: 0;
+  font-size: clamp(110px, 24vw, 417px);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: #30bdff;
+  text-align: center;
+}
+
+.workSubtitle {
+  max-width: 686px;
+  margin: 20px auto 0;
+  text-align: center;
+  font-size: clamp(20px, 1.8vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #1b1b1b;
+}
+
+.workGrid {
+  list-style: none;
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px 20px;
+}
+
+.workCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.workPlaceholder {
+  width: 100%;
+  aspect-ratio: 608 / 473;
+  background: #d1d2d6;
+}
+
+.workCardTitle {
+  margin-top: 12px;
+  font-size: clamp(18px, 1.4vw, 24px);
+  line-height: 1.16;
+  color: #131a26;
+}
+
+.workCardText {
+  margin-top: 6px;
+  max-width: 347px;
+  font-size: clamp(14px, 1.1vw, 20px);
+  line-height: 1.2;
+  color: #1b1b1b;
+}
+
+.workActions {
+  margin-top: 22px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #bfc0bc;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cta {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  min-height: 45px;
+  padding: 0 14px;
+  background: #d1d1c9;
+  color: #131a26;
+  font-size: clamp(18px, 1.3vw, 26px);
+  line-height: 1.1;
 }
 
-.main {
-  display: flex;
-  min-height: 100vh;
+.framesSection {
+  padding: 26px 0 44px;
+}
+
+.framesTitle {
+  margin: 0;
+  font-size: clamp(110px, 24vw, 417px);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: #30bdff;
+  text-align: center;
+}
+
+.framesSubtitle {
+  max-width: 628px;
+  margin: 18px auto 0;
+  text-align: center;
+  font-size: clamp(18px, 1.6vw, 30px);
+  line-height: 1.27;
+  color: #131415;
+}
+
+.framesGrid {
+  list-style: none;
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.frameCard {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.frameCard img {
+  display: block;
   width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  height: auto;
+  aspect-ratio: 395 / 396;
+  object-fit: cover;
 }
 
-.intro {
+.framesActions {
+  margin-top: 24px;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+  justify-content: flex-end;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
-}
-
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--button-secondary-border);
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+@media (max-width: 1100px) {
+  .workSubtitle {
+    max-width: 90%;
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+  .workGrid {
+    gap: 28px 16px;
+  }
+
+  .framesGrid {
+    gap: 14px;
   }
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
+@media (max-width: 760px) {
+  .container {
+    padding: 0 16px;
   }
 
-  .intro {
-    gap: 16px;
+  .introSection {
+    padding-top: 18px;
   }
 
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+  .heroImageWrap {
+    margin-top: 12px;
   }
 
-  .page {
-    --background: #000;
-    --foreground: #000;
+  .workSection {
+    padding-top: 18px;
+  }
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
+  .workTitle,
+  .framesTitle {
+    font-size: min(30vw, 210px);
+  }
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  .workSubtitle,
+  .framesSubtitle {
+    margin-top: 10px;
+    max-width: 100%;
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .workGrid {
+    margin-top: 16px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .workCardTitle {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .workCardText {
+    margin-top: 4px;
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .workActions,
+  .framesActions {
+    justify-content: flex-start;
+  }
+
+  .framesSection {
+    padding-top: 22px;
+  }
+
+  .framesGrid {
+    margin-top: 16px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cta {
+    min-height: 40px;
+    font-size: 18px;
   }
 }
