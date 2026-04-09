@@ -1,20 +1,29 @@
+import type { Metadata } from "next";
+import { ShowreelPlayer } from "@/components/showreel-player";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
+import { WORK_PROJECT_COUNT } from "@/lib/work-projects";
 import styles from "./page.module.css";
 
-const imgHeroSection =
-  "https://www.figma.com/api/mcp/asset/213e00ca-4f5e-4e39-9c98-2bdb62e608c3";
-const imgFramesOne =
-  "https://www.figma.com/api/mcp/asset/b12ad52a-056f-428c-801a-ce27d25d95eb";
-const imgFramesTwo =
-  "https://www.figma.com/api/mcp/asset/8511c255-e12f-4690-b1a3-f2e8c3724572";
-const imgFramesThree =
-  "https://www.figma.com/api/mcp/asset/d6076b0d-2d3f-4b29-a4fe-50a607d12cd9";
+const imgHeroSection = "/images/home/home-hero-artwork.png";
+const homeShowreelSrc = "/images/home/Showreel-07-april-2026.mp4";
+const homeShowreelPosterSrc = "/home-video-thumbnail.png";
+const homeShowreelCaptionsSrc = "/videos/captions/home-showreel-en.vtt";
+const imgFramesOne = "/images/home/frames-01-thumbnail.png";
+const imgFramesTwo = "/images/home/ooh2.mp4";
+const imgFramesThree = "/images/home/Nenu-Saitham.png";
 
 type WorkItem = {
   id: string;
   title: string;
   description: string;
+  href: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  videoSrc?: string;
+  videoWebmSrc?: string;
+  posterSrc?: string;
+  bgColor?: string;
 };
 
 const workItems: WorkItem[] = [
@@ -22,37 +31,38 @@ const workItems: WorkItem[] = [
     id: "adaps-it",
     title: "Adaps IT",
     description:
-      "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
+      "Shaping Adaps’ visual identity for the next era of australian technology",
+    href: "/project/adaps-it",
+    bgColor: "#056cf2",
+    videoSrc: "/videos/thumbnails/Adaps.mp4",
+    videoWebmSrc: "/videos/thumbnails/Adaps.webm",
+    posterSrc: "/videos/posters/Adaps.jpg",
   },
   {
     id: "sanctuary-in-the-woods",
     title: "Sanctuary in the Woods",
     description:
       "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
+    href: "/project/sanctuary-in-the-woods",
+    imageSrc: "/images/projects/sanctuary-in-the-woods-2025/poster-1.jpg",
+    imageAlt: "Sanctuary in the Woods artwork",
   },
   {
-    id: "holmes-ai",
-    title: "Holmes AI",
+    id: "elora",
+    title: "Elora",
     description:
       "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
+    href: "/project/elora",
+    imageSrc: "/videos/thumbnails/elora.png",
+    imageAlt: "Elora artwork",
   },
   {
-    id: "helios-stone",
+    id: "helios-stones-2024",
     title: "Helios Stone",
     description:
-      "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
-  },
-  {
-    id: "rootcos",
-    title: "Rootcos",
-    description:
-      "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
-  },
-  {
-    id: "expertise",
-    title: "Expertise",
-    description:
-      "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
+      "Crafting Timeless Elegance: Establishing an enduring identity for a luxury stone brand",
+    href: "/project/helios-stones",
+    videoSrc: "/Helios/Helios%20Thumbnail.mp4",
   },
 ];
 
@@ -62,20 +72,24 @@ const leftNavLinks = [
 ];
 
 const rightNavLinks = [
-  { id: "about-me", label: "ABOUT ME", href: "#footer" },
-  { id: "contact", label: "CONTACT", href: "#footer" },
+  { id: "about-me", label: "ABOUT ME", href: "/about" },
+  { id: "contact", label: "CONTACT", href: "/contact" },
 ];
 
-const socialLinks = [
-  { id: "instagram", label: "INSTAGRAM", href: "https://instagram.com" },
-  { id: "pinterest", label: "PINTEREST", href: "https://pinterest.com" },
-  { id: "behance", label: "BEHANCE", href: "https://behance.net" },
-];
+export const metadata: Metadata = {
+  title: "Home",
+  description:
+    "Brand identity and motion work by Viswanth Gudiwada, including selected projects, experiments, and contact information.",
+};
 
 export default function Home() {
   return (
     <main className={styles.page}>
-      <SiteNavbar leftLinks={leftNavLinks} rightLinks={rightNavLinks} />
+      <SiteNavbar
+        leftLinks={leftNavLinks}
+        rightLinks={rightNavLinks}
+        workCount={WORK_PROJECT_COUNT}
+      />
 
       <section className={styles.introSection}>
         <div className={styles.container}>
@@ -85,10 +99,11 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.heroImageWrap}>
-          <img
-            src={imgHeroSection}
-            alt="Hero artwork"
-            className={styles.heroImage}
+          <ShowreelPlayer
+            src={homeShowreelSrc}
+            posterSrc={homeShowreelPosterSrc}
+            title="Home showreel"
+            captionsSrc={homeShowreelCaptionsSrc}
           />
         </div>
       </section>
@@ -104,9 +119,43 @@ export default function Home() {
           <ul className={styles.workGrid}>
             {workItems.map((item) => (
               <li key={item.id} className={styles.workCard}>
-                <div className={styles.workPlaceholder} aria-hidden="true" />
-                <p className={styles.workCardTitle}>{item.title}</p>
-                <p className={styles.workCardText}>{item.description}</p>
+                <a href={item.href} className={styles.workCardLink}>
+                  <div
+                    className={styles.workPlaceholder}
+                    style={
+                      item.bgColor
+                        ? { backgroundColor: item.bgColor }
+                        : undefined
+                    }
+                  >
+                    {item.videoSrc ? (
+                      <video
+                        className={styles.workMedia}
+                        poster={item.posterSrc}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="none"
+                        disablePictureInPicture
+                      >
+                        {item.videoWebmSrc ? (
+                          <source src={item.videoWebmSrc} type="video/webm" />
+                        ) : null}
+                        <source src={item.videoSrc} type="video/mp4" />
+                      </video>
+                    ) : null}
+                    {!item.videoSrc && item.imageSrc ? (
+                      <img
+                        src={item.imageSrc}
+                        alt={item.imageAlt ?? item.title}
+                        className={styles.workMedia}
+                      />
+                    ) : null}
+                  </div>
+                  <p className={styles.workCardTitle}>{item.title}</p>
+                  <p className={styles.workCardText}>{item.description}</p>
+                </a>
               </li>
             ))}
           </ul>
@@ -132,7 +181,14 @@ export default function Home() {
               <img src={imgFramesOne} alt="Frames experiment one" />
             </li>
             <li className={styles.frameCard}>
-              <img src={imgFramesTwo} alt="Frames experiment two" />
+              <video
+                src={imgFramesTwo}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              />
             </li>
             <li className={styles.frameCard}>
               <img src={imgFramesThree} alt="Frames experiment three" />
@@ -150,8 +206,6 @@ export default function Home() {
       <SiteFooter
         id="footer"
         emailHref="mailto:hello@example.com"
-        socialLinks={socialLinks}
-        copyright="© Viswanth Gudiwada 2025"
         impactText="MAKING AN IMPACT"
       />
     </main>

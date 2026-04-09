@@ -29,6 +29,8 @@
   line-height: 0.9;
   letter-spacing: -0.03em;
   color: #30bdff;
+  -webkit-text-stroke: 1px #000000;
+  text-stroke: 1px #000000;
 }
 
 .subtitle {
@@ -57,10 +59,21 @@
   width: 100%;
 }
 
-.placeholder {
+.mediaWrap {
   width: 100%;
-  aspect-ratio: 897 / 616;
+  overflow: hidden;
   background: #d1d2d6;
+}
+
+.media {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.mediaWrap img.media {
+  will-change: transform;
 }
 
 @media (max-width: 1100px) {

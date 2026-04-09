@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
+import { WORK_PROJECT_COUNT } from "@/lib/work-projects";
 import styles from "./about.module.css";
 
 const leftNavLinks = [
@@ -9,19 +11,23 @@ const leftNavLinks = [
 
 const rightNavLinks = [
   { id: "about-me", label: "ABOUT ME", href: "/about" },
-  { id: "contact", label: "CONTACT", href: "#footer" },
+  { id: "contact", label: "CONTACT", href: "/contact" },
 ];
 
-const socialLinks = [
-  { id: "instagram", label: "INSTAGRAM", href: "https://instagram.com" },
-  { id: "pinterest", label: "PINTEREST", href: "https://pinterest.com" },
-  { id: "behance", label: "BEHANCE", href: "https://behance.net" },
-];
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "About Viswanth Gudiwada - a brand identity and motion designer based in Vijayawada.",
+};
 
 export default function AboutPage() {
   return (
     <main className={styles.page}>
-      <SiteNavbar leftLinks={leftNavLinks} rightLinks={rightNavLinks} />
+      <SiteNavbar
+        leftLinks={leftNavLinks}
+        rightLinks={rightNavLinks}
+        workCount={WORK_PROJECT_COUNT}
+      />
 
       <section className={styles.heroSection}>
         <div className={styles.container}>
@@ -35,9 +41,15 @@ export default function AboutPage() {
 
       <section className={styles.contentSection}>
         <div className={styles.container}>
-          <div className={styles.contentContainer}>
+            <div className={styles.contentContainer}>
             <div className={styles.contentGrid}>
-              <div className={styles.portraitPlaceholder} aria-hidden="true" />
+              <div className={styles.portraitPlaceholder}>
+                <img
+                  className={styles.portraitImage}
+                  src="/viswanth-photo.png"
+                  alt="Portrait of Viswanth"
+                />
+              </div>
               <div className={styles.contentRight}>
                 <p>
                   A brand identity and motion designer based in Vijayawada. Over
@@ -56,7 +68,11 @@ export default function AboutPage() {
                   Outside of client work, I&apos;m often exploring Indian type,
                   designing experimental visuals, or animating just for fun.
                 </p>
-                <a href="/resume.pdf" className={styles.resumeButton}>
+                <a
+                  href="/resume/Viswanth%20Resume.pdf"
+                  download
+                  className={styles.resumeButton}
+                >
                   VIEW MY RESUME
                 </a>
               </div>
@@ -68,8 +84,6 @@ export default function AboutPage() {
       <SiteFooter
         id="footer"
         emailHref="mailto:hello@example.com"
-        socialLinks={socialLinks}
-        copyright="© Viswanth Gudiwada 2025"
         impactText="MAKING AN IMPACT"
       />
     </main>

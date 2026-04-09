@@ -13,12 +13,14 @@ type SiteNavbarProps = {
   leftLinks: NavLink[];
   rightLinks: NavLink[];
   tone?: "default" | "inverted";
+  workCount?: number;
 };
 
 export function SiteNavbar({
   leftLinks,
   rightLinks,
   tone = "default",
+  workCount,
 }: SiteNavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navToneClass =
@@ -29,6 +31,18 @@ export function SiteNavbar({
     () => [...leftLinks, ...rightLinks],
     [leftLinks, rightLinks],
   );
+  const renderLabel = (link: NavLink) => {
+    if (link.id !== "work" || workCount === undefined) {
+      return link.label;
+    }
+
+    return (
+      <span className={styles.workLabel}>
+        <span>WORK</span>
+        <sup className={styles.workCount}>{workCount}</sup>
+      </span>
+    );
+  };
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 993px)");
@@ -71,18 +85,31 @@ export function SiteNavbar({
             <ul className={styles.navGroup}>
               {leftLinks.map((link) => (
                 <li key={link.id}>
-                  <a href={link.href}>{link.label}</a>
+                  <a href={link.href}>{renderLabel(link)}</a>
                 </li>
               ))}
             </ul>
+            <a href="/" className={styles.brandLogo} aria-label="Home">
+              <img
+                src="/Viswanth%20Gudiwada%20Navbar%20Logo.svg"
+                alt="Viswanth Gudiwada"
+              />
+            </a>
             <ul className={styles.navGroup}>
               {rightLinks.map((link) => (
                 <li key={link.id}>
-                  <a href={link.href}>{link.label}</a>
+                  <a href={link.href}>{renderLabel(link)}</a>
                 </li>
               ))}
             </ul>
           </div>
+
+          <a href="/" className={styles.mobileBrandLogo} aria-label="Home">
+            <img
+              src="/Viswanth%20Gudiwada%20Navbar%20Logo.svg"
+              alt="Viswanth Gudiwada"
+            />
+          </a>
 
           <button
             type="button"
@@ -109,7 +136,7 @@ export function SiteNavbar({
           {allLinks.map((link) => (
             <li key={link.id} className={styles.mobileNavItem}>
               <a href={link.href} onClick={() => setIsMenuOpen(false)}>
-                {link.label}
+                {renderLabel(link)}
               </a>
             </li>
           ))}

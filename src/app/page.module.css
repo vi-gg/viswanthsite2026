@@ -43,6 +43,48 @@
   object-fit: cover;
 }
 
+.showreelPlayer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 0;
+  background: #b8b4a3;
+}
+
+.showreelPlayerFill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0;
+  background: #b8b4a3;
+}
+
+.showreelVideo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: transparent;
+}
+
+.showreelPosterHint {
+  position: absolute;
+  left: 18px;
+  bottom: 84px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(15, 20, 29, 0.62);
+  backdrop-filter: blur(10px);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #f7f7f3;
+  text-transform: uppercase;
+}
+
 .workSection {
   padding: 30px 0 24px;
 }
@@ -53,6 +95,8 @@
   line-height: 0.9;
   letter-spacing: -0.03em;
   color: #30bdff;
+  -webkit-text-stroke: 1px #000000;
+  text-stroke: 1px #000000;
   text-align: center;
 }
 
@@ -79,10 +123,28 @@
   flex-direction: column;
 }
 
+.workCardLink {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+}
+
 .workPlaceholder {
+  position: relative;
   width: 100%;
   aspect-ratio: 608 / 473;
   background: #d1d2d6;
+  overflow: hidden;
+}
+
+.workMedia {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .workCardTitle {
@@ -130,6 +192,8 @@
   line-height: 0.9;
   letter-spacing: -0.03em;
   color: #30bdff;
+  -webkit-text-stroke: 1px #000000;
+  text-stroke: 1px #000000;
   text-align: center;
 }
 
@@ -155,11 +219,12 @@
   overflow: hidden;
 }
 
-.frameCard img {
+.frameCard img,
+.frameCard video {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 395 / 396;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
@@ -198,6 +263,19 @@
 
   .workSection {
     padding-top: 18px;
+  }
+
+  .showreelPlayer {
+    aspect-ratio: 4 / 5;
+  }
+
+  .showreelPosterHint {
+    left: 12px;
+    right: 12px;
+    bottom: 72px;
+    width: fit-content;
+    max-width: calc(100% - 24px);
+    font-size: 11px;
   }
 
   .workTitle,

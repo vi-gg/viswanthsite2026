@@ -28,11 +28,19 @@
   color: #f0f0ea;
 }
 
+.navWrapInverted .brandLogo img {
+  filter: invert(1);
+}
+
+.navWrapInverted .mobileBrandLogo img {
+  filter: invert(1);
+}
+
 .desktopLinks {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 24px;
 }
 
@@ -41,6 +49,39 @@
   display: flex;
   align-items: center;
   gap: 24px;
+}
+
+.navGroup:last-child {
+  justify-self: end;
+}
+
+.brandLogo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+}
+
+.brandLogo img {
+  display: block;
+  width: clamp(220px, 18vw, 340px);
+  height: auto;
+}
+
+.mobileBrandLogo {
+  display: none;
+}
+
+.workLabel {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 1px;
+}
+
+.workCount {
+  font-size: 0.62em;
+  line-height: 1;
+  transform: translateY(-0.36em);
 }
 
 .menuButton {
@@ -91,11 +132,22 @@
   }
 
   .navWrap {
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 
   .desktopLinks {
     display: none;
+  }
+
+  .mobileBrandLogo {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .mobileBrandLogo img {
+    display: block;
+    width: 190px;
+    height: auto;
   }
 
   .menuButton {
@@ -153,6 +205,10 @@
 @media (max-width: 760px) {
   .container {
     padding: 0 16px;
+  }
+
+  .mobileBrandLogo img {
+    width: 154px;
   }
 
   .mobileNavList {

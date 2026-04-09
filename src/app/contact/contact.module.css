@@ -1,0 +1,144 @@
+.page {
+  min-height: 100vh;
+  background: #f0f0ea;
+  color: #131415;
+  font-family:
+    "TT Hoves Pro Condensed", "Arial Narrow", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-weight: 300;
+}
+
+.page :where(h1, h2, h3, h4, h5, h6, p, a, li, span) {
+  font-weight: 300;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.heroSection {
+  padding-top: 8px;
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(110px, 24vw, 347px);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: #30bdff;
+  -webkit-text-stroke: 1px #000000;
+  text-stroke: 1px #000000;
+}
+
+.subtitle {
+  width: min(814px, 100%);
+  margin: 30px auto 0;
+  text-align: center;
+  font-size: clamp(24px, 2.1vw, 40px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #1b1b1b;
+}
+
+.gridSection {
+  padding: 52px 0 56px;
+}
+
+.marqueeViewport {
+  --visible-cards: 3;
+  --card-gap: 20px;
+  width: 100%;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: contact-marquee 28s linear infinite;
+  will-change: transform;
+}
+
+.marqueeGroup {
+  display: flex;
+  gap: var(--card-gap);
+  width: max-content;
+  flex: 0 0 auto;
+  padding-right: var(--card-gap);
+}
+
+.card {
+  flex: 0 0 420px;
+  width: 420px;
+  height: 550px;
+  background: #0c1015;
+  overflow: hidden;
+}
+
+.cardImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1100px) {
+  .marqueeViewport {
+    --visible-cards: 2;
+    --card-gap: 18px;
+  }
+
+  .card {
+    flex: 0 0 calc((100cqw - var(--card-gap)) / 2);
+    width: calc((100cqw - var(--card-gap)) / 2);
+    height: auto;
+    aspect-ratio: 420 / 550;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .heroSection {
+    padding-top: 18px;
+  }
+
+  .title {
+    text-align: left;
+    font-size: min(30vw, 180px);
+  }
+
+  .subtitle {
+    margin-top: 14px;
+    text-align: left;
+    font-size: 24px;
+  }
+
+  .gridSection {
+    padding: 28px 0 36px;
+  }
+
+  .marqueeViewport {
+    --visible-cards: 1;
+    --card-gap: 10px;
+  }
+
+  .card {
+    flex: 0 0 100cqw;
+    width: 100cqw;
+  }
+}
+
+@keyframes contact-marquee {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
