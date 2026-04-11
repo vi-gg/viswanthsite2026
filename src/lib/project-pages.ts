@@ -90,14 +90,35 @@ const projectOrder: ProjectStub[] = [
   { slug: "nhempco", title: "Nhempco", year: "2021" },
   { slug: "e5-hospitality", title: "E5 Hospitality", year: "2024" },
   { slug: "totspot", title: "Totspot", year: "2021" },
-  { slug: "ace-dellago", title: "ACE DelLago", year: "2025" },
+  { slug: "ace-dellago", title: "ACE Dellago", year: "2025" },
   { slug: "rootcos", title: "Rootcos", year: "2023" },
-  { slug: "charminar", title: "Charminar", year: "2025" },
   {
     slug: "parentheses-showreel",
     title: "Parentheses Showreel",
     year: "2022",
   },
+];
+
+const workCaseStudyOrder: ProjectStub[] = [
+  { slug: "adaps-it", title: "Adaps", year: "2026" },
+  {
+    slug: "sanctuary-in-the-woods",
+    title: "Sanctuary in the Woods",
+    year: "2025",
+  },
+  { slug: "elora", title: "Elora", year: "2025" },
+  { slug: "helios-stones", title: "Helios", year: "2024" },
+  { slug: "one-downtown", title: "One Downtown", year: "2024" },
+  { slug: "loyola-viscomm", title: "Loyola Viscomm", year: "2025" },
+  { slug: "snn-raj-corp", title: "SNN Raj Corp", year: "2026" },
+  { slug: "rydon", title: "Rydon", year: "2025" },
+  { slug: "nhempco", title: "Nhempco", year: "2021" },
+  { slug: "totspot", title: "Totspot", year: "2021" },
+  { slug: "e5-hospitality", title: "E5 Hospitality", year: "2024" },
+  { slug: "ace-dellago", title: "ACE Dellago", year: "2025" },
+  { slug: "rootcos", title: "Rootcos", year: "2023" },
+  { slug: "charminar-gin", title: "Charminar Gin", year: "2025" },
+  { slug: "holmes-ai", title: "Holmes AI", year: "2025" },
 ];
 
 const adapsPage: ProjectPageData = {
@@ -233,7 +254,7 @@ const adapsPage: ProjectPageData = {
     "The result is a refined and scalable identity system that communicates with clarity, reflects Adaps’ experience, and positions the brand as a modern, solution-focused global partner.",
   nextProject: {
     slug: "sanctuary-in-the-woods",
-    title: "Sanctuary in the woods",
+    title: "Sanctuary in the Woods",
     category: "Brand Identity Design",
     year: "2025",
     imageSrc: "/images/projects/adaps-it-2026/next-project-poster.jpg",
@@ -243,7 +264,7 @@ const adapsPage: ProjectPageData = {
 
 const sanctuaryPage: ProjectPageData = {
   slug: "sanctuary-in-the-woods",
-  title: "Sanctuary in the woods",
+  title: "Sanctuary in the Woods",
   year: "2025",
   intro: [
     "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
@@ -251,7 +272,7 @@ const sanctuaryPage: ProjectPageData = {
     "Over the course of 2 months, I designed the entire brand identity, from the logo and visual system to the brochure, type system, and messaging. And yes! I had a lot of fun doing it.",
   ],
   facts: [
-    { label: "Client", value: "Sanctuary in the woods" },
+    { label: "Client", value: "Sanctuary in the Woods" },
     { label: "Studio/Team", value: "Studio 318 India" },
     { label: "My Role", value: "Lead Designer on the Project" },
   ],
@@ -1053,7 +1074,7 @@ const loyolaViscommPage: ProjectPageData = {
 
 const nhempco2021Page: ProjectPageData = {
   slug: "nhempco",
-  title: "NhempCo",
+  title: "Nhempco",
   year: "2021",
   subtitle:
     "Brand identity and rollout communication for Nhempco across motion and print media.",
@@ -1325,7 +1346,7 @@ const totspot2021Page: ProjectPageData = {
     "The Totspot system brings together logo construction, multilingual identity work, and a flexible screen language into one cohesive brand story.",
   nextProject: {
     slug: "ace-dellago",
-    title: "ACE DelLago",
+    title: "ACE Dellago",
     category: "Brand Identity Design",
     year: "2025",
   },
@@ -1333,14 +1354,14 @@ const totspot2021Page: ProjectPageData = {
 
 const aceDellagoPage: ProjectPageData = {
   slug: "ace-dellago",
-  title: "ACE DelLago",
+  title: "ACE Dellago",
   year: "2025",
   intro: [
-    "ACE DelLago now has a dedicated project route in the shared case study system.",
+    "ACE Dellago now has a dedicated project route in the shared case study system.",
     "The full long-form story is still being assembled. For now, this page is intentionally in a coming-soon state.",
   ],
   facts: [
-    { label: "Client", value: "ACE DelLago" },
+    { label: "Client", value: "ACE Dellago" },
     { label: "Studio/Team", value: "Parentheses Studio" },
     { label: "My Role", value: "Lead Designer on the Project" },
   ],
@@ -1360,7 +1381,7 @@ const aceDellagoPage: ProjectPageData = {
 
 const rootcosPage: ProjectPageData = {
   slug: "rootcos",
-  title: "RootCos",
+  title: "Rootcos",
   year: "2023",
   intro: [
     "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
@@ -1368,7 +1389,7 @@ const rootcosPage: ProjectPageData = {
     "Over the course of 2 months, I designed the entire brand identity, from the logo and visual system to the brochure, type system, and messaging. And yes! I had a lot of fun doing it.",
   ],
   facts: [
-    { label: "Client", value: "RootCos" },
+    { label: "Client", value: "Rootcos" },
     { label: "Studio/Team", value: "Parentheses Studio" },
     { label: "My Role", value: "Mid-Level Designer on the Project" },
   ],
@@ -1380,8 +1401,8 @@ const rootcosPage: ProjectPageData = {
   sections: [],
   summary: "Coming Soon",
   nextProject: {
-    slug: "charminar",
-    title: "Charminar",
+    slug: "charminar-gin",
+    title: "Charminar Gin",
     category: "Brand Identity Design",
     year: "2025",
   },
@@ -1469,33 +1490,6 @@ const charminarGinPage: ProjectPageData = {
     title: "SNN Raj Corp",
     category: "Brand Identity Design",
     year: "2026",
-  },
-};
-
-const charminarPage: ProjectPageData = {
-  slug: "charminar",
-  title: "Charminar",
-  year: "2025",
-  subtitle: "A closer look at the identity work is on the way.",
-  intro: [
-    "Charminar now has a dedicated project route in the shared case study system.",
-    "The full long-form story is still being assembled. For now, this page is intentionally in a coming-soon state.",
-  ],
-  facts: [
-    { label: "Client", value: "Charminar" },
-    { label: "Studio/Team", value: "Parentheses Studio" },
-    { label: "My Role", value: "Lead Designer on the Project" },
-  ],
-  hero: {
-    backgroundColor: "#d9d9de",
-  },
-  sections: [],
-  summary: "Coming Soon",
-  nextProject: {
-    slug: "parentheses-showreel",
-    title: "Parentheses Showreel",
-    category: "Showreel",
-    year: "2022",
   },
 };
 
@@ -1782,7 +1776,6 @@ const detailedProjectPages: Record<string, ProjectPageData> = {
   [holmesAiPage.slug]: holmesAiPage,
   [parenthesesShowreelPage.slug]: parenthesesShowreelPage,
   [charminarGinPage.slug]: charminarGinPage,
-  [charminarPage.slug]: charminarPage,
   [loyolaViscommPage.slug]: loyolaViscommPage,
   [snnRajCorp2026Page.slug]: snnRajCorp2026Page,
 };
@@ -1799,6 +1792,45 @@ function getNextProject(slug: string) {
   }
 
   return projectOrder[(index + 1) % projectOrder.length];
+}
+
+function getNextWorkCaseStudy(slug: string) {
+  const index = workCaseStudyOrder.findIndex((project) => project.slug === slug);
+
+  if (index === -1) {
+    return null;
+  }
+
+  return workCaseStudyOrder[(index + 1) % workCaseStudyOrder.length];
+}
+
+function alignNextProjectToWorkOrder(page: ProjectPageData): ProjectPageData {
+  const nextProject = getNextWorkCaseStudy(page.slug);
+
+  if (!nextProject) {
+    return page;
+  }
+
+  const keepPreviewMeta = page.nextProject.slug === nextProject.slug;
+
+  return {
+    ...page,
+    nextProject: {
+      slug: nextProject.slug,
+      title: nextProject.title,
+      category: page.nextProject.category,
+      year: nextProject.year,
+      ...(keepPreviewMeta
+        ? {
+            imageSrc: page.nextProject.imageSrc,
+            imageAlt: page.nextProject.imageAlt,
+            backgroundColor: page.nextProject.backgroundColor,
+            logoSrc: page.nextProject.logoSrc,
+            logoAlt: page.nextProject.logoAlt,
+          }
+        : {}),
+    },
+  };
 }
 
 function createFallbackProjectPage(slug: string): ProjectPageData | null {
@@ -1854,7 +1886,13 @@ function createFallbackProjectPage(slug: string): ProjectPageData | null {
 }
 
 export function getProjectPage(slug: string) {
-  return detailedProjectPages[slug] ?? createFallbackProjectPage(slug);
+  const page = detailedProjectPages[slug] ?? createFallbackProjectPage(slug);
+
+  if (!page) {
+    return null;
+  }
+
+  return alignNextProjectToWorkOrder(page);
 }
 
 export function getAllProjectSlugs() {

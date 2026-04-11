@@ -93,7 +93,7 @@ export const workProjects: WorkProjectCard[] = [
     label: "ACE Dellago | 2025",
     href: "/project/ace-dellago",
     imageSrc: "/thumbnails/DelLago.png",
-    imageAlt: "ACE DelLago brochure artwork",
+    imageAlt: "ACE Dellago brochure artwork",
   },
   {
     id: "rootcos",
@@ -115,14 +115,6 @@ export const workProjects: WorkProjectCard[] = [
     href: "/project/holmes-ai",
     imageSrc: "/HolmesAI-cover.png",
     imageAlt: "Holmes AI cover artwork",
-  },
-  {
-    id: "charminar",
-    label: "Charminar | 2025",
-    href: "/project/charminar",
-    hidden: true,
-    imageSrc: "/thumbnails/Charminar.png",
-    imageAlt: "Charminar cover artwork",
   },
 ];
 
