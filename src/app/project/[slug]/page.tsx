@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CaseStudyMediaArranger } from "@/components/case-study-media-arranger";
 import { ShowreelPlayer } from "@/components/showreel-player";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
@@ -58,6 +59,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     project.sections.length === 0 &&
     project.summary?.trim().toLowerCase() === "coming soon";
   const isParenthesesShowreel = project.slug === "parentheses-showreel";
+  const enableMediaArranger = true;
 
   return (
     <main className={styles.page}>
@@ -143,87 +145,37 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
 
         <div className={styles.container}>
-          <div className={styles.mediaStack}>
-            {project.sections.map((section) => {
-              if (section.type === "image") {
-                return (
-                  <figure
-                    key={section.id}
-                    className={`${styles.mediaCard} ${
-                      section.bordered ? styles.mediaCardBordered : ""
-                    } ${section.fit === "contain" ? styles.mediaCardContain : ""}`}
-                    style={
-                      section.backgroundColor
-                        ? { backgroundColor: section.backgroundColor }
-                        : undefined
-                    }
-                  >
-                    <img src={section.src} alt={section.alt} />
-                  </figure>
-                );
-              }
-
-              if (section.type === "video") {
-                return (
-                  <figure
-                    key={section.id}
-                    className={`${styles.mediaCard} ${
-                      section.bordered ? styles.mediaCardBordered : ""
-                    } ${section.fit === "contain" ? styles.mediaCardContain : ""}`}
-                    style={
-                      section.backgroundColor
-                        ? { backgroundColor: section.backgroundColor }
-                        : undefined
-                    }
-                  >
-                    <video
-                      src={section.src}
-                      poster={section.posterSrc}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
-                    />
-                  </figure>
-                );
-              }
-
-              if (section.type === "callout") {
-                return (
-                  <div key={section.id} className={styles.calloutSection}>
-                    <h2 className={styles.calloutTitle}>{section.title}</h2>
-                    <p className={styles.calloutBody}>{section.body}</p>
-                  </div>
-                );
-              }
-
-              return (
-                <div
-                  key={section.id}
-                  className={styles.placeholderCard}
-                  style={
-                    section.backgroundColor
-                      ? { backgroundColor: section.backgroundColor }
-                      : undefined
-                  }
-                >
-                  {section.title ? (
-                    <p
-                      className={styles.placeholderTitle}
-                      style={
-                        section.titleColor
-                          ? { color: section.titleColor }
-                          : undefined
-                      }
-                    >
-                      {section.title}
-                    </p>
-                  ) : null}
-                </div>
-              );
-            })}
-          </div>
+          <CaseStudyMediaArranger
+            sections={project.sections}
+            projectSlug={project.slug}
+            enableArranger={enableMediaArranger}
+            classes={{
+              mediaStack: styles.mediaStack,
+              mediaCard: styles.mediaCard,
+              mediaCardBordered: styles.mediaCardBordered,
+              mediaCardContain: styles.mediaCardContain,
+              calloutSection: styles.calloutSection,
+              calloutTitle: styles.calloutTitle,
+              calloutBody: styles.calloutBody,
+              placeholderCard: styles.placeholderCard,
+              placeholderTitle: styles.placeholderTitle,
+              arrangeCanvasHighlight: styles.arrangeCanvasHighlight,
+              arrangeToggle: styles.arrangeToggle,
+              arrangePanel: styles.arrangePanel,
+              arrangeHeader: styles.arrangeHeader,
+              arrangeList: styles.arrangeList,
+              arrangeItem: styles.arrangeItem,
+              arrangeItemActive: styles.arrangeItemActive,
+              arrangeItemMeta: styles.arrangeItemMeta,
+              arrangeTypeChip: styles.arrangeTypeChip,
+              arrangeThumb: styles.arrangeThumb,
+              arrangeThumbPlaceholder: styles.arrangeThumbPlaceholder,
+              arrangeItemActions: styles.arrangeItemActions,
+              arrangeBtn: styles.arrangeBtn,
+              arrangeBtnGhost: styles.arrangeBtnGhost,
+              arrangeHint: styles.arrangeHint,
+            }}
+          />
 
           {project.summary ? (
             <div
@@ -273,7 +225,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </div>
               </div>
 
-              {project.nextProject.imageSrc ? (
+              {project.nextProject.videoSrc ? (
+                <Link
+                  href={`/project/${project.nextProject.slug}`}
+                  className={styles.nextProjectMedia}
+                >
+                  <video autoPlay muted loop playsInline preload="none">
+                    <source src={project.nextProject.videoSrc} type="video/mp4" />
+                  </video>
+                </Link>
+              ) : project.nextProject.imageSrc ? (
                 <Link
                   href={`/project/${project.nextProject.slug}`}
                   className={styles.nextProjectMedia}

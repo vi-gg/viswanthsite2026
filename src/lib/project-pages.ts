@@ -1,3 +1,5 @@
+import { visibleWorkProjects } from "./work-projects";
+
 export type ProjectPageFact = {
   label: string;
   value: string;
@@ -58,6 +60,7 @@ export type ProjectPageData = {
     title: string;
     category: string;
     year: string;
+    videoSrc?: string;
     imageSrc?: string;
     imageAlt?: string;
     backgroundColor?: string;
@@ -120,6 +123,80 @@ const workCaseStudyOrder: ProjectStub[] = [
   { slug: "charminar-gin", title: "Charminar Gin", year: "2025" },
   { slug: "holmes-ai", title: "Holmes AI", year: "2025" },
 ];
+
+const nextProjectPreviewFallback: Record<
+  string,
+  Pick<
+    ProjectPageData["nextProject"],
+    | "videoSrc"
+    | "imageSrc"
+    | "imageAlt"
+    | "backgroundColor"
+    | "logoSrc"
+    | "logoAlt"
+  >
+> = {
+  "adaps-it": {
+    videoSrc: "/thumbnails/Adaps.mp4",
+    imageAlt: "Adaps IT preview video",
+  },
+  "sanctuary-in-the-woods": {
+    imageSrc: "/thumbnails/SITW.png",
+    imageAlt: "Sanctuary in the Woods preview",
+  },
+  elora: {
+    imageSrc: "/thumbnails/Elora.png",
+    imageAlt: "Elora preview",
+  },
+  "helios-stones": {
+    videoSrc: "/thumbnails/Helios%20Thumbnail.mp4",
+    imageAlt: "Helios preview video",
+  },
+  "one-downtown": {
+    imageSrc: "/videos/thumbnails/onedowntown.png",
+    imageAlt: "One Downtown preview",
+  },
+  "loyola-viscomm": {
+    videoSrc: "/thumbnails/Viscomm.mp4",
+    imageAlt: "Loyola Viscomm preview",
+  },
+  "snn-raj-corp": {
+    videoSrc: "/thumbnails/SNN.mp4",
+    imageAlt: "SNN Raj Corp preview video",
+  },
+  rydon: {
+    videoSrc: "/thumbnails/Rydon.mp4",
+    imageAlt: "Rydon preview video",
+  },
+  nhempco: {
+    videoSrc: "/thumbnails/Nhempco.mp4",
+    imageAlt: "Nhempco preview video",
+  },
+  totspot: {
+    videoSrc: "/thumbnails/Totspot.mp4",
+    imageAlt: "Totspot preview video",
+  },
+  "e5-hospitality": {
+    imageSrc: "/thumbnails/E5.png",
+    imageAlt: "E5 Hospitality preview",
+  },
+  "ace-dellago": {
+    imageSrc: "/thumbnails/DelLago.png",
+    imageAlt: "ACE Dellago preview",
+  },
+  rootcos: {
+    imageSrc: "/thumbnails/Rootcos.png",
+    imageAlt: "Rootcos preview",
+  },
+  "charminar-gin": {
+    imageSrc: "/thumbnails/Charminar.png",
+    imageAlt: "Charminar Gin preview",
+  },
+  "holmes-ai": {
+    imageSrc: "/HolmesAI-cover.png",
+    imageAlt: "Holmes AI preview",
+  },
+};
 
 const adapsPage: ProjectPageData = {
   slug: "adaps-it",
@@ -607,7 +684,6 @@ function createScaffoldProjectPage(
     slug,
     title,
     year,
-    subtitle: "Case study in progress.",
     intro: [
       `${title} now has a dedicated project route in the shared long-form case study system.`,
       "Content, images, and final art direction can be layered into this page without rebuilding the structure.",
@@ -650,10 +726,9 @@ const heliosPage: ProjectPageData = {
   slug: "helios-stones",
   title: "Helios",
   year: "2025",
-  subtitle: "Brand identity and visual communication for a luxury stone brand.",
   intro: [
     "Helios, a leader in luxury stone, and largest stone atelier in the country, needed a brand identity that reflected their heritage and quality. Through careful design, we crafted an identity for them that reflected their heritage, quality, scale, and excellence.",
-    "Helios Logo mark was created with the intersection of a circle and square - blend of stability and perfection, at the intersection lies 'H' symbolizing Helios.",
+    "Helios Logo mark was created with the intersection of a circle and square - blend of stability and perfection, at the intersection lies ‘H’ symbolizing Helios.",
   ],
   facts: [
     { label: "Client", value: "Helios Stone Studio" },
@@ -782,7 +857,6 @@ const rydonPage: ProjectPageData = {
   slug: "rydon",
   title: "Rydon",
   year: "2025",
-  subtitle: "Brand identity and rollout materials for Rydon.",
   intro: [
     "For 33+ years, Rydon has been keeping up with a demanding world, innovating ceaselessly to become one of India's prominent providers of power transmission solutions. By rebranding them, we found the sweet spot between old and new to give them an identity that was modern, but traditionally grounded in who they have been for over 3 decades.",
   ],
@@ -793,37 +867,31 @@ const rydonPage: ProjectPageData = {
   ],
   hero: {
     backgroundColor: "#111111",
-    backgroundVideoSrc: "/OneDowntown/onedowntown-1-fullscreen.mp4",
+    backgroundVideoSrc: "/Rydon/Hero%20Image%201.mp4",
     hideFallbackTitle: true,
   },
   sections: [
     {
-      id: "rydon-video-1",
-      type: "video",
-      src: "/Rydon/New/New%20Video%201.mp4",
-    },
-    {
-      id: "rydon-image-1",
+      id: "rydon-2",
       type: "image",
-      src: "/Rydon/New/New-1.png",
-      alt: "Rydon media 1",
-    },
-    {
-      id: "rydon-image-2",
-      type: "image",
-      src: "/Rydon/New/New-2.png",
+      src: "/Rydon/2.png",
       alt: "Rydon media 2",
     },
     {
-      id: "rydon-video-3",
+      id: "rydon-3",
       type: "video",
-      src: "/Rydon/New/New%20Video%203.mp4",
+      src: "/Rydon/3.mp4",
     },
     {
       id: "rydon-4",
       type: "image",
       src: "/Rydon/4.png",
       alt: "Rydon media 4",
+    },
+    {
+      id: "rydon-3-5",
+      type: "video",
+      src: "/Rydon/3.5.mp4",
     },
     {
       id: "rydon-5",
@@ -867,16 +935,27 @@ const rydonPage: ProjectPageData = {
       alt: "Rydon media 11",
     },
     {
+      id: "rydon-14",
+      type: "video",
+      src: "/Rydon/14.mp4",
+    },
+    {
       id: "rydon-13",
       type: "image",
       src: "/Rydon/13.png",
       alt: "Rydon media 13",
     },
     {
-      id: "rydon-14",
+      id: "rydon-14-alt",
       type: "image",
-      src: "/Rydon/14.png",
-      alt: "Rydon media 14",
+      src: "/Rydon/14-alt.png",
+      alt: "Rydon media 14 alt",
+    },
+    {
+      id: "rydon-15",
+      type: "image",
+      src: "/Rydon/15.png",
+      alt: "Rydon media 15",
     },
     {
       id: "rydon-16",
@@ -923,8 +1002,6 @@ const loyolaViscommPage: ProjectPageData = {
   slug: "loyola-viscomm",
   title: "Loyola Viscomm",
   year: "2025",
-  subtitle:
-    "Motion, communication, and visual storytelling for Loyola Viscomm.",
   intro: [
     "The department of visual communication at Andhra Loyola is the first in Andhra Pradesh to offer a UG degree in creative disciplines taught by a faculty comprising artists, writers, photographers, and designers. In my final year graduation, I was asked to re-design the viscomm department visual identity to bring more clarity and consistency for the department's visual language. I designed a simple and strong monogram that improves the recognizability of the Viscomm department.",
   ],
@@ -1076,8 +1153,6 @@ const nhempco2021Page: ProjectPageData = {
   slug: "nhempco",
   title: "Nhempco",
   year: "2021",
-  subtitle:
-    "Brand identity and rollout communication for Nhempco across motion and print media.",
   intro: [
     "Namratha hemp company is a bangalore based hemp research and development company, I was worked on their logo redesign process. The logo was created using a simple, yet unique, approach.",
     "I designed a hemp leaf visual motif with a tear drop to set it apart from other hemp leaf logos and a smooth rhombus acting as a container, making it a very strong and well-balanced brand motif.",
@@ -1111,9 +1186,10 @@ const nhempco2021Page: ProjectPageData = {
       alt: "Nhempco media 3",
     },
     {
-      id: "nhempco-4",
-      type: "video",
-      src: "/Nhempco/4.mp4",
+      id: "nhempco-4-png",
+      type: "image",
+      src: "/Nhempco/4.png",
+      alt: "Nhempco media 4",
     },
     {
       id: "nhempco-5",
@@ -1122,16 +1198,21 @@ const nhempco2021Page: ProjectPageData = {
       alt: "Nhempco media 5",
     },
     {
+      id: "nhempco-4",
+      type: "video",
+      src: "/Nhempco/4.mp4",
+    },
+    {
+      id: "nhempco-logo",
+      type: "image",
+      src: "/Nhempco/logo.jpg",
+      alt: "Nhempco logo application",
+    },
+    {
       id: "nhempco-6",
       type: "image",
       src: "/Nhempco/6.jpg",
       alt: "Nhempco media 6",
-    },
-    {
-      id: "nhempco-7",
-      type: "image",
-      src: "/Nhempco/7.png",
-      alt: "Nhempco media 7",
     },
     {
       id: "nhempco-8",
@@ -1146,10 +1227,10 @@ const nhempco2021Page: ProjectPageData = {
       alt: "Nhempco media 9",
     },
     {
-      id: "nhempco-10",
+      id: "nhempco-7",
       type: "image",
-      src: "/Nhempco/10.png",
-      alt: "Nhempco media 10",
+      src: "/Nhempco/7.png",
+      alt: "Nhempco media 7",
     },
     {
       id: "nhempco-11",
@@ -1158,16 +1239,16 @@ const nhempco2021Page: ProjectPageData = {
       alt: "Nhempco media 11",
     },
     {
+      id: "nhempco-10",
+      type: "image",
+      src: "/Nhempco/10.png",
+      alt: "Nhempco media 10",
+    },
+    {
       id: "nhempco-sign",
       type: "image",
       src: "/Nhempco/sign.jpg",
       alt: "Nhempco signage application",
-    },
-    {
-      id: "nhempco-logo",
-      type: "image",
-      src: "/Nhempco/logo.jpg",
-      alt: "Nhempco logo application",
     },
   ],
   summary:
@@ -1213,7 +1294,6 @@ const totspot2021Page: ProjectPageData = {
   slug: "totspot",
   title: "Totspot",
   year: "2021",
-  subtitle: "Brand identity and product communication for Totspot.",
   intro: [
     "Totspot believes that children deserve a magical and inspiring space to grow, play, and dream. Their expertly crafted furniture is designed with both safety and functionality in mind, ensuring that each piece brings joy and comfort to little ones. I was involved in developing brand Identity for the totspot.",
     "The Totspot Brand Identity captured the essence of the brand and connected with both kids and parents. The Fun and colorful design elements and typography created an engaging brand image, while the clean and simple layouts conveyed a trustworthy and professional look.",
@@ -1225,10 +1305,22 @@ const totspot2021Page: ProjectPageData = {
   ],
   hero: {
     backgroundColor: "#f2efe8",
-    backgroundImageSrc: "/totspot/1.png",
+    backgroundVideoSrc: "/totspot/Totspot-hero.mp4",
     hideFallbackTitle: true,
   },
   sections: [
+    {
+      id: "totspot-1",
+      type: "image",
+      src: "/totspot/1.png",
+      alt: "Totspot media 1",
+    },
+    {
+      id: "totspot-2-screens",
+      type: "image",
+      src: "/totspot/2_Screens.jpg",
+      alt: "Totspot screen presentation 2",
+    },
     {
       id: "totspot-logo-construction",
       type: "video",
@@ -1238,54 +1330,6 @@ const totspot2021Page: ProjectPageData = {
       id: "totspot-tagline",
       type: "video",
       src: "/totspot/Totspot%20Tagline.mp4",
-    },
-    {
-      id: "totspot-1-screens",
-      type: "image",
-      src: "/totspot/1_Screens.jpg",
-      alt: "Totspot screen presentation 1",
-    },
-    {
-      id: "totspot-2-screens",
-      type: "image",
-      src: "/totspot/2_Screens.jpg",
-      alt: "Totspot screen presentation 2",
-    },
-    {
-      id: "totspot-3-screens",
-      type: "image",
-      src: "/totspot/3_Screens.jpg",
-      alt: "Totspot screen presentation 3",
-    },
-    {
-      id: "totspot-4-screens",
-      type: "image",
-      src: "/totspot/4_Screens.jpg",
-      alt: "Totspot screen presentation 4",
-    },
-    {
-      id: "totspot-5-screens",
-      type: "image",
-      src: "/totspot/5_Screens.jpg",
-      alt: "Totspot screen presentation 5",
-    },
-    {
-      id: "totspot-6-screens",
-      type: "image",
-      src: "/totspot/6_Screens.jpg",
-      alt: "Totspot screen presentation 6",
-    },
-    {
-      id: "totspot-screens-overview",
-      type: "image",
-      src: "/totspot/Screens.jpg",
-      alt: "Totspot screens overview",
-    },
-    {
-      id: "totspot-kannada-logo",
-      type: "image",
-      src: "/totspot/Kannada-Logo.jpg",
-      alt: "Totspot Kannada logo presentation",
     },
     {
       id: "totspot-4",
@@ -1340,6 +1384,48 @@ const totspot2021Page: ProjectPageData = {
       type: "image",
       src: "/totspot/12.png",
       alt: "Totspot media 12",
+    },
+    {
+      id: "totspot-4-screens",
+      type: "image",
+      src: "/totspot/4_Screens.jpg",
+      alt: "Totspot screen presentation 4",
+    },
+    {
+      id: "totspot-6-screens",
+      type: "image",
+      src: "/totspot/6_Screens.jpg",
+      alt: "Totspot screen presentation 6",
+    },
+    {
+      id: "totspot-5-screens",
+      type: "image",
+      src: "/totspot/5_Screens.jpg",
+      alt: "Totspot screen presentation 5",
+    },
+    {
+      id: "totspot-1-screens",
+      type: "image",
+      src: "/totspot/1_Screens.jpg",
+      alt: "Totspot screen presentation 1",
+    },
+    {
+      id: "totspot-3-screens",
+      type: "image",
+      src: "/totspot/3_Screens.jpg",
+      alt: "Totspot screen presentation 3",
+    },
+    {
+      id: "totspot-screens-overview",
+      type: "image",
+      src: "/totspot/Screens.jpg",
+      alt: "Totspot screens overview",
+    },
+    {
+      id: "totspot-kannada-logo",
+      type: "image",
+      src: "/totspot/Kannada-Logo.jpg",
+      alt: "Totspot Kannada logo presentation",
     },
   ],
   summary:
@@ -1439,7 +1525,6 @@ const parenthesesShowreelPage: ProjectPageData = {
   slug: "parentheses-showreel",
   title: "Parentheses Showreel",
   year: "2022",
-  subtitle: "A full-length studio showreel.",
   intro: [
     "This page presents the Parentheses showreel as the primary full-width media experience.",
     "Playback controls match the home showreel style for a consistent viewing experience.",
@@ -1497,7 +1582,6 @@ const oneDowntown2024Page: ProjectPageData = {
   slug: "one-downtown",
   title: "One Downtown",
   year: "2024",
-  subtitle: "Brand communication and rollout visuals for One Downtown.",
   intro: [
     "One Downtown, located in the heart of Kokapet, Hyderabad, is vying to become the ultimate destination for both fun and work. Our goal was to reflect this dynamic ambition in the visual identity we created. Through thoughtful design and strategic branding, we aimed to capture the essence of One Downtown as a vibrant hub where business and lifestyle seamlessly converge.",
   ],
@@ -1646,7 +1730,6 @@ const snnRajCorp2026Page: ProjectPageData = {
   slug: "snn-raj-corp",
   title: "SNN Raj Corp",
   year: "2026",
-  subtitle: "Brand communication and screen-led rollout for SNN Raj Corp.",
   intro: [
     "SNN Raj Corp looked like they had it all. 6000+ happy customers, prominence in the real estate industry, several cutting-edge projects in the works. But they felt misaligned with their brand identity, and wanted it to reflect the high standards they set for themselves, and resonate with their audience.",
   ],
@@ -1795,13 +1878,32 @@ function getNextProject(slug: string) {
 }
 
 function getNextWorkCaseStudy(slug: string) {
-  const index = workCaseStudyOrder.findIndex((project) => project.slug === slug);
+  const index = workCaseStudyOrder.findIndex(
+    (project) => project.slug === slug,
+  );
 
   if (index === -1) {
     return null;
   }
 
   return workCaseStudyOrder[(index + 1) % workCaseStudyOrder.length];
+}
+
+function getNextPreviewFromWork(slug: string) {
+  const workProject = visibleWorkProjects.find(
+    (project) => project.href === `/project/${slug}`,
+  );
+
+  if (!workProject) {
+    return null;
+  }
+
+  return {
+    videoSrc: workProject.videoSrc,
+    imageSrc: workProject.imageSrc,
+    imageAlt: workProject.imageAlt,
+    backgroundColor: workProject.bgColor,
+  };
 }
 
 function alignNextProjectToWorkOrder(page: ProjectPageData): ProjectPageData {
@@ -1812,6 +1914,21 @@ function alignNextProjectToWorkOrder(page: ProjectPageData): ProjectPageData {
   }
 
   const keepPreviewMeta = page.nextProject.slug === nextProject.slug;
+  const fallbackPreview = nextProjectPreviewFallback[nextProject.slug] ?? {};
+  const workPreview = getNextPreviewFromWork(nextProject.slug);
+  const resolvedVideoSrc =
+    workPreview?.videoSrc ??
+    (keepPreviewMeta ? page.nextProject.videoSrc : undefined) ??
+    fallbackPreview.videoSrc;
+  const resolvedImageSrc = resolvedVideoSrc
+    ? undefined
+    : (workPreview?.imageSrc ??
+      (keepPreviewMeta ? page.nextProject.imageSrc : undefined) ??
+      fallbackPreview.imageSrc);
+  const resolvedImageAlt =
+    workPreview?.imageAlt ??
+    (keepPreviewMeta ? page.nextProject.imageAlt : undefined) ??
+    fallbackPreview.imageAlt;
 
   return {
     ...page,
@@ -1820,15 +1937,19 @@ function alignNextProjectToWorkOrder(page: ProjectPageData): ProjectPageData {
       title: nextProject.title,
       category: page.nextProject.category,
       year: nextProject.year,
-      ...(keepPreviewMeta
-        ? {
-            imageSrc: page.nextProject.imageSrc,
-            imageAlt: page.nextProject.imageAlt,
-            backgroundColor: page.nextProject.backgroundColor,
-            logoSrc: page.nextProject.logoSrc,
-            logoAlt: page.nextProject.logoAlt,
-          }
-        : {}),
+      videoSrc: resolvedVideoSrc,
+      imageSrc: resolvedImageSrc,
+      imageAlt: resolvedImageAlt,
+      backgroundColor:
+        workPreview?.backgroundColor ??
+        (keepPreviewMeta ? page.nextProject.backgroundColor : undefined) ??
+        fallbackPreview.backgroundColor,
+      logoSrc:
+        (keepPreviewMeta ? page.nextProject.logoSrc : undefined) ??
+        fallbackPreview.logoSrc,
+      logoAlt:
+        (keepPreviewMeta ? page.nextProject.logoAlt : undefined) ??
+        fallbackPreview.logoAlt,
     },
   };
 }
@@ -1846,7 +1967,6 @@ function createFallbackProjectPage(slug: string): ProjectPageData | null {
     slug: project.slug,
     title: project.title,
     year: project.year,
-    subtitle: "Case study in progress.",
     intro: [
       `${project.title} uses the same long-form case study structure as the rest of the portfolio, with room for context, key visuals, and a closing project handoff.`,
       `The final write-up and media for this project are still being assembled, so this page currently acts as the shared layout scaffold for future case studies.`,
