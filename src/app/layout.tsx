@@ -44,6 +44,11 @@ const websiteSchema = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  icons: {
+    icon: "/favicon/favicon.jpg",
+    shortcut: "/favicon/favicon.jpg",
+    apple: "/favicon/favicon.jpg",
+  },
   title: {
     default: defaultTitle,
     template: "%s | Viswanth Gudiwada",

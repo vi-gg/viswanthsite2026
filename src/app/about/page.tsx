@@ -32,16 +32,12 @@ export default function AboutPage() {
       <section className={styles.heroSection}>
         <div className={styles.container}>
           <h1 className={styles.aboutTitle}>ABOUT</h1>
-          <p className={styles.introCopy}>
-            <span>Hello! I&apos;m Viswanth.</span>
-            <span>Self-Taught Graphic Designer.</span>
-          </p>
         </div>
       </section>
 
       <section className={styles.contentSection}>
         <div className={styles.container}>
-            <div className={styles.contentContainer}>
+          <div className={styles.contentContainer}>
             <div className={styles.contentGrid}>
               <div className={styles.portraitPlaceholder}>
                 <img
@@ -69,7 +65,7 @@ export default function AboutPage() {
                   designing experimental visuals, or animating just for fun.
                 </p>
                 <a
-                  href="/resume/Viswanth%20Resume.pdf"
+                  href="/resume/Viswanth-Resume.pdf"
                   download
                   className={styles.resumeButton}
                 >
@@ -83,7 +79,7 @@ export default function AboutPage() {
 
       <SiteFooter
         id="footer"
-        emailHref="mailto:hello@example.com"
+        emailHref="mailto:hello@viswanth.com"
         impactText="MAKING AN IMPACT"
       />
     </main>

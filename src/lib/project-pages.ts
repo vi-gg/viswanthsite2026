@@ -245,9 +245,8 @@ const sanctuaryPage: ProjectPageData = {
   slug: "sanctuary-in-the-woods",
   title: "Sanctuary in the woods",
   year: "2025",
-  subtitle:
-    "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
   intro: [
+    "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
     "Sanctuary in the Woods is not just another plotted development project, it's a nature-first retreat designed for those seeking clarity, calm, and connection. My approach was to translate this ethos into a brand that doesn’t speak louder than nature, but flows with it.",
     "Over the course of 2 months, I designed the entire brand identity, from the logo and visual system to the brochure, type system, and messaging. And yes! I had a lot of fun doing it.",
   ],
@@ -632,12 +631,12 @@ const heliosPage: ProjectPageData = {
   year: "2025",
   subtitle: "Brand identity and visual communication for a luxury stone brand.",
   intro: [
-    "Helios explores a refined identity language for a luxury stone brand, balancing elegance, material richness, and architectural presence across digital and motion-led touchpoints.",
-    "This case study gathers the full Helios asset sequence into the long-form project format, using the latest exports from the project folder.",
+    "Helios, a leader in luxury stone, and largest stone atelier in the country, needed a brand identity that reflected their heritage and quality. Through careful design, we crafted an identity for them that reflected their heritage, quality, scale, and excellence.",
+    "Helios Logo mark was created with the intersection of a circle and square - blend of stability and perfection, at the intersection lies 'H' symbolizing Helios.",
   ],
   facts: [
-    { label: "Client", value: "Helios" },
-    { label: "Studio/Team", value: "Independent" },
+    { label: "Client", value: "Helios Stone Studio" },
+    { label: "Studio/Team", value: "Parentheses Studio" },
     { label: "My Role", value: "Lead Designer on the Project" },
   ],
   hero: {
@@ -764,12 +763,11 @@ const rydonPage: ProjectPageData = {
   year: "2025",
   subtitle: "Brand identity and rollout materials for Rydon.",
   intro: [
-    "The Rydon case study brings together motion-led reveals and still brand applications into the shared long-form project format.",
-    "For this pass, the full-width hero is intentionally left blank until the final full-screen asset is shared, while the rest of the sequence uses the latest available folder media.",
+    "For 33+ years, Rydon has been keeping up with a demanding world, innovating ceaselessly to become one of India's prominent providers of power transmission solutions. By rebranding them, we found the sweet spot between old and new to give them an identity that was modern, but traditionally grounded in who they have been for over 3 decades.",
   ],
   facts: [
     { label: "Client", value: "Rydon" },
-    { label: "Studio/Team", value: "Independent" },
+    { label: "Studio/Team", value: "Parentheses Studio" },
     { label: "My Role", value: "Lead Designer on the Project" },
   ],
   hero: {
@@ -907,12 +905,11 @@ const loyolaViscommPage: ProjectPageData = {
   subtitle:
     "Motion, communication, and visual storytelling for Loyola Viscomm.",
   intro: [
-    "This Viscomm case study brings together motion-led communication and still-image outputs into a single long-form presentation.",
-    "The page uses the latest exported media set, starting with the dedicated hero asset and then following the numbered sequence from the project folder.",
+    "The department of visual communication at Andhra Loyola is the first in Andhra Pradesh to offer a UG degree in creative disciplines taught by a faculty comprising artists, writers, photographers, and designers. In my final year graduation, I was asked to re-design the viscomm department visual identity to bring more clarity and consistency for the department's visual language. I designed a simple and strong monogram that improves the recognizability of the Viscomm department.",
   ],
   facts: [
-    { label: "Client", value: "Loyola Viscomm" },
-    { label: "Studio/Team", value: "Independent" },
+    { label: "Client", value: "Andhra Loyola College" },
+    { label: "Studio/Team", value: "Graduation Project" },
     { label: "My Role", value: "Lead Designer on the Project" },
   ],
   hero: {
@@ -1054,27 +1051,122 @@ const loyolaViscommPage: ProjectPageData = {
   },
 };
 
-const nhempco2021Page = createScaffoldProjectPage(
-  "nhempco",
-  "Nhempco",
-  "2021",
-  "e5-hospitality",
-);
-
-nhempco2021Page.hero = {
-  backgroundColor: "#111111",
-  backgroundVideoSrc: "/Nhempco/Nhempco-hero.mp4",
-  hideFallbackTitle: true,
+const nhempco2021Page: ProjectPageData = {
+  slug: "nhempco",
+  title: "NhempCo",
+  year: "2021",
+  subtitle:
+    "Brand identity and rollout communication for Nhempco across motion and print media.",
+  intro: [
+    "Namratha hemp company is a bangalore based hemp research and development company, I was worked on their logo redesign process. The logo was created using a simple, yet unique, approach.",
+    "I designed a hemp leaf visual motif with a tear drop to set it apart from other hemp leaf logos and a smooth rhombus acting as a container, making it a very strong and well-balanced brand motif.",
+  ],
+  facts: [
+    { label: "Client", value: "Namrata Hemp Company" },
+    { label: "Studio/Team", value: "Parentheses Studio" },
+    { label: "My Role", value: "Lead Designer on the Project" },
+  ],
+  hero: {
+    backgroundColor: "#111111",
+    backgroundVideoSrc: "/Nhempco/Nhempco-hero.mp4",
+    hideFallbackTitle: true,
+  },
+  sections: [
+    {
+      id: "nhempco-1",
+      type: "video",
+      src: "/Nhempco/1.mp4",
+    },
+    {
+      id: "nhempco-2",
+      type: "image",
+      src: "/Nhempco/2.jpg",
+      alt: "Nhempco media 2",
+    },
+    {
+      id: "nhempco-3",
+      type: "image",
+      src: "/Nhempco/3%20Big%20Screen.png",
+      alt: "Nhempco media 3",
+    },
+    {
+      id: "nhempco-4",
+      type: "video",
+      src: "/Nhempco/4.mp4",
+    },
+    {
+      id: "nhempco-5",
+      type: "image",
+      src: "/Nhempco/5.png",
+      alt: "Nhempco media 5",
+    },
+    {
+      id: "nhempco-6",
+      type: "image",
+      src: "/Nhempco/6.jpg",
+      alt: "Nhempco media 6",
+    },
+    {
+      id: "nhempco-7",
+      type: "image",
+      src: "/Nhempco/7.png",
+      alt: "Nhempco media 7",
+    },
+    {
+      id: "nhempco-8",
+      type: "image",
+      src: "/Nhempco/8.jpg",
+      alt: "Nhempco media 8",
+    },
+    {
+      id: "nhempco-9",
+      type: "image",
+      src: "/Nhempco/9.png",
+      alt: "Nhempco media 9",
+    },
+    {
+      id: "nhempco-10",
+      type: "image",
+      src: "/Nhempco/10.png",
+      alt: "Nhempco media 10",
+    },
+    {
+      id: "nhempco-11",
+      type: "image",
+      src: "/Nhempco/11.jpg",
+      alt: "Nhempco media 11",
+    },
+    {
+      id: "nhempco-sign",
+      type: "image",
+      src: "/Nhempco/sign.jpg",
+      alt: "Nhempco signage application",
+    },
+    {
+      id: "nhempco-logo",
+      type: "image",
+      src: "/Nhempco/logo.jpg",
+      alt: "Nhempco logo application",
+    },
+  ],
+  summary:
+    "The Nhempco project now presents its full visual sequence across motion and static media inside the shared case-study layout.",
+  nextProject: {
+    slug: "e5-hospitality",
+    title: "E5 Hospitality",
+    category: "Brand Identity Design",
+    year: "2024",
+  },
 };
 
 const e5HospitalityPage: ProjectPageData = {
   slug: "e5-hospitality",
   title: "E5 Hospitality",
   year: "2024",
-  subtitle: "A closer look at the identity work is on the way.",
   intro: [
-    "E5 Hospitality already has a dedicated project route in the shared case study system.",
-    "The full story and supporting media are being prepared. For now, this page holds the primary artwork and a simple coming-soon placeholder.",
+    "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
+    "Sanctuary in the Woods is not just another plotted development project, it's a nature-first retreat designed for those seeking clarity, calm, and connection. My approach was to translate this ethos into a brand that doesn’t speak louder than nature, but flows with it.",
+    "Over the course of 2 months, I designed the entire brand identity, from the logo and visual system to the brochure, type system, and messaging. And yes! I had a lot of fun doing it.",
   ],
   facts: [
     { label: "Client", value: "E5 Hospitality" },
@@ -1102,12 +1194,12 @@ const totspot2021Page: ProjectPageData = {
   year: "2021",
   subtitle: "Brand identity and product communication for Totspot.",
   intro: [
-    "Totspot brings together product thinking, packaging, and brand language in a way that needs to feel clear, warm, and trustworthy from the first interaction.",
-    "This case study collects the visual system, motion pieces, and screen-based applications from the Totspot project into the shared long-form format.",
+    "Totspot believes that children deserve a magical and inspiring space to grow, play, and dream. Their expertly crafted furniture is designed with both safety and functionality in mind, ensuring that each piece brings joy and comfort to little ones. I was involved in developing brand Identity for the totspot.",
+    "The Totspot Brand Identity captured the essence of the brand and connected with both kids and parents. The Fun and colorful design elements and typography created an engaging brand image, while the clean and simple layouts conveyed a trustworthy and professional look.",
   ],
   facts: [
     { label: "Client", value: "Totspot" },
-    { label: "Studio/Team", value: "Independent" },
+    { label: "Studio/Team", value: "Parentheses Studio" },
     { label: "My Role", value: "Lead Designer on the Project" },
   ],
   hero: {
@@ -1239,26 +1331,46 @@ const totspot2021Page: ProjectPageData = {
   },
 };
 
-const aceDellagoPage = createScaffoldProjectPage(
-  "ace-dellago",
-  "ACE DelLago",
-  "2025",
-  "rootcos",
-);
+const aceDellagoPage: ProjectPageData = {
+  slug: "ace-dellago",
+  title: "ACE DelLago",
+  year: "2025",
+  intro: [
+    "ACE DelLago now has a dedicated project route in the shared case study system.",
+    "The full long-form story is still being assembled. For now, this page is intentionally in a coming-soon state.",
+  ],
+  facts: [
+    { label: "Client", value: "ACE DelLago" },
+    { label: "Studio/Team", value: "Parentheses Studio" },
+    { label: "My Role", value: "Lead Designer on the Project" },
+  ],
+  hero: {
+    backgroundColor: "#d1d2d6",
+    hideFallbackTitle: true,
+  },
+  sections: [],
+  summary: "Coming Soon",
+  nextProject: {
+    slug: "rootcos",
+    title: "Rootcos",
+    category: "Brand Identity Design",
+    year: "2023",
+  },
+};
 
 const rootcosPage: ProjectPageData = {
   slug: "rootcos",
-  title: "Rootcos",
+  title: "RootCos",
   year: "2023",
-  subtitle: "A closer look at the identity work is on the way.",
   intro: [
-    "Rootcos already has a dedicated project route in the shared case study system.",
-    "The full long-form story is still being assembled. For now, this page keeps the lead artwork in place with a simple coming-soon state.",
+    "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
+    "Sanctuary in the Woods is not just another plotted development project, it's a nature-first retreat designed for those seeking clarity, calm, and connection. My approach was to translate this ethos into a brand that doesn’t speak louder than nature, but flows with it.",
+    "Over the course of 2 months, I designed the entire brand identity, from the logo and visual system to the brochure, type system, and messaging. And yes! I had a lot of fun doing it.",
   ],
   facts: [
-    { label: "Client", value: "Rootcos" },
+    { label: "Client", value: "RootCos" },
     { label: "Studio/Team", value: "Parentheses Studio" },
-    { label: "My Role", value: "Lead Designer on the Project" },
+    { label: "My Role", value: "Mid-Level Designer on the Project" },
   ],
   hero: {
     backgroundColor: "#d7d2c7",
@@ -1279,14 +1391,12 @@ const holmesAiPage: ProjectPageData = {
   slug: "holmes-ai",
   title: "Holmes AI",
   year: "2025",
-  subtitle: "A closer look at the identity work is on the way.",
   intro: [
-    "Holmes AI now has a dedicated project route in the shared case study system.",
-    "The full long-form story is still being assembled. For now, this page keeps the lead artwork in place with a simple coming-soon state.",
+    "Holmes AI is an AI-powered platform built to simplify and accelerate legal contract analysis. The objective of this project was to design a logo that captures the essence of intelligence, precision, and modern legal technology, within a single, cohesive mark.",
   ],
   facts: [
     { label: "Client", value: "Holmes AI" },
-    { label: "Studio/Team", value: "Independent" },
+    { label: "Studio/Team", value: "Studio 318 India" },
     { label: "My Role", value: "Lead Designer on the Project" },
   ],
   hero: {
@@ -1338,14 +1448,13 @@ const charminarGinPage: ProjectPageData = {
   slug: "charminar-gin",
   title: "Charminar Gin",
   year: "2025",
-  subtitle: "A closer look at the identity work is on the way.",
   intro: [
-    "Charminar Gin now has a dedicated project route in the shared case study system.",
-    "The full long-form story is still being assembled. For now, this page keeps the lead artwork in place with a simple coming-soon state.",
+    "Hyderabad is not a city you understand at once. It reveals itself slowly, through its architecture, its food, its people, and the quiet rhythm of its everyday life. Built over centuries, shaped by multiple influences, it exists as a layered cultural experience.",
+    "Charminar Gin was conceived as a premium craft gin rooted in this very idea - not just representing Hyderabad, but translating its essence into a sensory and visual experience. The challenge was clear: How do you capture a city’s complexity without reducing it to clichés?",
   ],
   facts: [
-    { label: "Client", value: "Charminar Gin" },
-    { label: "Studio/Team", value: "Parentheses Studio" },
+    { label: "Client", value: "Charminar GIN" },
+    { label: "Studio/Team", value: "Studio 318 India" },
     { label: "My Role", value: "Lead Designer on the Project" },
   ],
   hero: {
@@ -1363,23 +1472,49 @@ const charminarGinPage: ProjectPageData = {
   },
 };
 
+const charminarPage: ProjectPageData = {
+  slug: "charminar",
+  title: "Charminar",
+  year: "2025",
+  subtitle: "A closer look at the identity work is on the way.",
+  intro: [
+    "Charminar now has a dedicated project route in the shared case study system.",
+    "The full long-form story is still being assembled. For now, this page is intentionally in a coming-soon state.",
+  ],
+  facts: [
+    { label: "Client", value: "Charminar" },
+    { label: "Studio/Team", value: "Parentheses Studio" },
+    { label: "My Role", value: "Lead Designer on the Project" },
+  ],
+  hero: {
+    backgroundColor: "#d9d9de",
+  },
+  sections: [],
+  summary: "Coming Soon",
+  nextProject: {
+    slug: "parentheses-showreel",
+    title: "Parentheses Showreel",
+    category: "Showreel",
+    year: "2022",
+  },
+};
+
 const oneDowntown2024Page: ProjectPageData = {
   slug: "one-downtown",
   title: "One Downtown",
   year: "2024",
   subtitle: "Brand communication and rollout visuals for One Downtown.",
   intro: [
-    "This case study now uses the latest media sequence from the OneDowntown project folder.",
-    "The full-width hero thumbnail is not available yet, so the top hero remains intentionally minimal while the rest of the page uses the supplied assets.",
+    "One Downtown, located in the heart of Kokapet, Hyderabad, is vying to become the ultimate destination for both fun and work. Our goal was to reflect this dynamic ambition in the visual identity we created. Through thoughtful design and strategic branding, we aimed to capture the essence of One Downtown as a vibrant hub where business and lifestyle seamlessly converge.",
   ],
   facts: [
-    { label: "Client", value: "One Downtown" },
-    { label: "Studio/Team", value: "Independent" },
+    { label: "Client", value: "One Downtown by RR Corp" },
+    { label: "Studio/Team", value: "Parentheses Studio" },
     { label: "My Role", value: "Lead Designer on the Project" },
   ],
   hero: {
     backgroundColor: "#111111",
-    backgroundVideoSrc: "/SNN%20Raj%20Corp/SNN-hero.mp4",
+    backgroundVideoSrc: "/OneDowntown/onedowntown-1-fullscreen.mp4",
     hideFallbackTitle: true,
   },
   sections: [
@@ -1519,12 +1654,11 @@ const snnRajCorp2026Page: ProjectPageData = {
   year: "2026",
   subtitle: "Brand communication and screen-led rollout for SNN Raj Corp.",
   intro: [
-    "This case study brings together the latest SNN Raj Corp screen exports and motion pieces in the shared long-form project format.",
-    "There is no dedicated full-width hero asset in the new folder yet, so the top hero is intentionally left minimal while the rest of the sequence uses the supplied media.",
+    "SNN Raj Corp looked like they had it all. 6000+ happy customers, prominence in the real estate industry, several cutting-edge projects in the works. But they felt misaligned with their brand identity, and wanted it to reflect the high standards they set for themselves, and resonate with their audience.",
   ],
   facts: [
     { label: "Client", value: "SNN Raj Corp" },
-    { label: "Studio/Team", value: "Independent" },
+    { label: "Studio/Team", value: "Parentheses Studio" },
     { label: "My Role", value: "Lead Designer on the Project" },
   ],
   hero: {
@@ -1648,6 +1782,7 @@ const detailedProjectPages: Record<string, ProjectPageData> = {
   [holmesAiPage.slug]: holmesAiPage,
   [parenthesesShowreelPage.slug]: parenthesesShowreelPage,
   [charminarGinPage.slug]: charminarGinPage,
+  [charminarPage.slug]: charminarPage,
   [loyolaViscommPage.slug]: loyolaViscommPage,
   [snnRajCorp2026Page.slug]: snnRajCorp2026Page,
 };

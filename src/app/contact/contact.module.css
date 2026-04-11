@@ -44,7 +44,16 @@
 }
 
 .gridSection {
-  padding: 52px 0 56px;
+  padding: 52px 0 0;
+}
+
+.gridSection .container {
+  padding-bottom: 0;
+}
+
+.gridInner {
+  padding-bottom: 56px;
+  border-bottom: 1px solid #bfc0bc;
 }
 
 .marqueeViewport {
@@ -120,7 +129,15 @@
   }
 
   .gridSection {
-    padding: 28px 0 36px;
+    padding: 28px 0 0;
+  }
+
+  .gridSection .container {
+    padding-bottom: 0;
+  }
+
+  .gridInner {
+    padding-bottom: 36px;
   }
 
   .marqueeViewport {

@@ -313,7 +313,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <SiteFooter
         id="footer"
-        emailHref="mailto:hello@example.com"
+        emailHref="mailto:hello@viswanth.com"
         impactText="MAKING AN IMPACT"
       />
     </main>

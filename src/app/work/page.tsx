@@ -46,53 +46,60 @@ export default function WorkPage() {
         className={styles.gridSection}
         aria-label="Project grid"
       >
-        <ul className={styles.grid}>
-          {visibleWorkProjects.map((project) => (
-            <li key={project.id} className={styles.card}>
-              <Link href={project.href} className={styles.cardLink}>
-                <div
-                  className={styles.media}
-                  style={
-                    project.bgColor
-                      ? { backgroundColor: project.bgColor }
-                      : undefined
-                  }
-                >
-                  {project.videoSrc ? (
-                    <video
-                      className={styles.video}
-                      poster={project.posterSrc}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="none"
-                      disablePictureInPicture
+        <div className={styles.container}>
+          <div className={styles.gridInner}>
+            <ul className={styles.grid}>
+              {visibleWorkProjects.map((project) => (
+                <li key={project.id} className={styles.card}>
+                  <Link href={project.href} className={styles.cardLink}>
+                    <div
+                      className={styles.media}
+                      style={
+                        project.bgColor
+                          ? { backgroundColor: project.bgColor }
+                          : undefined
+                      }
                     >
-                      {project.videoWebmSrc ? (
-                        <source src={project.videoWebmSrc} type="video/webm" />
+                      {project.videoSrc ? (
+                        <video
+                          className={styles.video}
+                          poster={project.posterSrc}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          preload="none"
+                          disablePictureInPicture
+                        >
+                          {project.videoWebmSrc ? (
+                            <source
+                              src={project.videoWebmSrc}
+                              type="video/webm"
+                            />
+                          ) : null}
+                          <source src={project.videoSrc} type="video/mp4" />
+                        </video>
                       ) : null}
-                      <source src={project.videoSrc} type="video/mp4" />
-                    </video>
-                  ) : null}
-                  {!project.videoSrc && project.imageSrc ? (
-                    <img
-                      className={styles.image}
-                      src={project.imageSrc}
-                      alt={project.imageAlt ?? project.label}
-                    />
-                  ) : null}
-                </div>
-                <p>{project.label}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                      {!project.videoSrc && project.imageSrc ? (
+                        <img
+                          className={styles.image}
+                          src={project.imageSrc}
+                          alt={project.imageAlt ?? project.label}
+                        />
+                      ) : null}
+                    </div>
+                    <p>{project.label}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </section>
 
       <SiteFooter
         id="footer"
-        emailHref="mailto:hello@example.com"
+        emailHref="mailto:hello@viswanth.com"
         impactText="MAKING AN IMPACT"
       />
     </main>

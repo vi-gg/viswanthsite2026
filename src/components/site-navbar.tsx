@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { type CSSProperties, useEffect, useMemo, useState } from "react";
 import styles from "./site-navbar.module.css";
 
 type NavLink = {
@@ -23,6 +23,9 @@ export function SiteNavbar({
   workCount,
 }: SiteNavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isNavHidden, setIsNavHidden] = useState(false);
+  const headerToneClass =
+    tone === "inverted" ? styles.headerInverted : styles.headerDefault;
   const navToneClass =
     tone === "inverted" ? styles.navWrapInverted : styles.navWrapDefault;
   const menuToneClass =
@@ -62,20 +65,80 @@ export function SiteNavbar({
 
   useEffect(() => {
     if (!isMenuOpen) {
-      document.body.style.overflow = "";
       return;
     }
 
-    const previousOverflow = document.body.style.overflow;
+    const scrollY = window.scrollY;
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousBodyPosition = document.body.style.position;
+    const previousBodyTop = document.body.style.top;
+    const previousBodyWidth = document.body.style.width;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
+
+    document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
 
     return () => {
-      document.body.style.overflow = previousOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
+      document.body.style.overflow = previousBodyOverflow;
+      document.body.style.position = previousBodyPosition;
+      document.body.style.top = previousBodyTop;
+      document.body.style.width = previousBodyWidth;
+      window.scrollTo(0, scrollY);
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const updateNavVisibility = () => {
+      const currentScrollY = window.scrollY;
+      const scrollDelta = currentScrollY - lastScrollY;
+
+      if (isMenuOpen) {
+        setIsNavHidden(false);
+        lastScrollY = currentScrollY;
+        ticking = false;
+        return;
+      }
+
+      if (currentScrollY <= 8) {
+        setIsNavHidden(false);
+      } else if (scrollDelta > 6) {
+        setIsNavHidden(true);
+      } else if (scrollDelta < -4) {
+        setIsNavHidden(false);
+      }
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (ticking) {
+        return;
+      }
+      ticking = true;
+      window.requestAnimationFrame(updateNavVisibility);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
     };
   }, [isMenuOpen]);
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${headerToneClass} ${
+        isNavHidden ? styles.headerHidden : ""
+      }`}
+    >
       <div className={styles.container}>
         <nav
           aria-label="Primary"
@@ -133,8 +196,12 @@ export function SiteNavbar({
         }`}
       >
         <ul className={styles.mobileNavList}>
-          {allLinks.map((link) => (
-            <li key={link.id} className={styles.mobileNavItem}>
+          {allLinks.map((link, index) => (
+            <li
+              key={link.id}
+              className={styles.mobileNavItem}
+              style={{ "--stagger-index": index } as CSSProperties}
+            >
               <a href={link.href} onClick={() => setIsMenuOpen(false)}>
                 {renderLabel(link)}
               </a>

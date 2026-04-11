@@ -54,30 +54,32 @@ export default function ContactPage() {
 
       <section className={styles.gridSection} aria-label="Contact placeholders">
         <div className={styles.container}>
-          <div className={styles.marqueeViewport}>
-            <div className={styles.marqueeTrack}>
-              <div className={styles.marqueeGroup}>
-                {contactImages.map((item) => (
-                  <figure key={item.id} className={styles.card}>
-                    <img
-                      className={styles.cardImage}
-                      src={item.src}
-                      alt={item.alt}
-                    />
-                  </figure>
-                ))}
-              </div>
-              <div className={styles.marqueeGroup} aria-hidden="true">
-                {contactImages.map((item) => (
-                  <figure key={`${item.id}-copy`} className={styles.card}>
-                    <img
-                      className={styles.cardImage}
-                      src={item.src}
-                      alt=""
-                      aria-hidden="true"
-                    />
-                  </figure>
-                ))}
+          <div className={styles.gridInner}>
+            <div className={styles.marqueeViewport}>
+              <div className={styles.marqueeTrack}>
+                <div className={styles.marqueeGroup}>
+                  {contactImages.map((item) => (
+                    <figure key={item.id} className={styles.card}>
+                      <img
+                        className={styles.cardImage}
+                        src={item.src}
+                        alt={item.alt}
+                      />
+                    </figure>
+                  ))}
+                </div>
+                <div className={styles.marqueeGroup} aria-hidden="true">
+                  {contactImages.map((item) => (
+                    <figure key={`${item.id}-copy`} className={styles.card}>
+                      <img
+                        className={styles.cardImage}
+                        src={item.src}
+                        alt=""
+                        aria-hidden="true"
+                      />
+                    </figure>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

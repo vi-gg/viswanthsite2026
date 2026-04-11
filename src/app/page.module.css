@@ -19,7 +19,11 @@
 }
 
 .introSection {
-  padding-top: 24px;
+  padding-top: 128px;
+}
+
+.introSection .container {
+  margin-bottom: 48px;
 }
 
 .introCopy {
@@ -101,7 +105,7 @@
 }
 
 .workSubtitle {
-  max-width: 686px;
+  width: min(100%, 560px);
   margin: 20px auto 0;
   text-align: center;
   font-size: clamp(20px, 1.8vw, 36px);
@@ -198,7 +202,7 @@
 }
 
 .framesSubtitle {
-  max-width: 628px;
+  width: min(100%, 530px);
   margin: 18px auto 0;
   text-align: center;
   font-size: clamp(18px, 1.6vw, 30px);
@@ -235,10 +239,6 @@
 }
 
 @media (max-width: 1100px) {
-  .workSubtitle {
-    max-width: 90%;
-  }
-
   .workGrid {
     gap: 28px 16px;
   }
@@ -266,7 +266,18 @@
   }
 
   .showreelPlayer {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 16 / 9;
+    background: #000000;
+  }
+
+  .showreelPlayer :global(.plyr video) {
+    object-fit: contain;
+    background: #000000;
+  }
+
+  .showreelPlayer :global(.plyr__poster) {
+    background-size: contain;
+    background-color: #000000;
   }
 
   .showreelPosterHint {

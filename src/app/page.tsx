@@ -34,8 +34,7 @@ const workItems: WorkItem[] = [
       "Shaping Adaps’ visual identity for the next era of australian technology",
     href: "/project/adaps-it",
     bgColor: "#056cf2",
-    videoSrc: "/videos/thumbnails/Adaps.mp4",
-    videoWebmSrc: "/videos/thumbnails/Adaps.webm",
+    videoSrc: "/thumbnails/Adaps.mp4",
     posterSrc: "/videos/posters/Adaps.jpg",
   },
   {
@@ -44,7 +43,7 @@ const workItems: WorkItem[] = [
     description:
       "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
     href: "/project/sanctuary-in-the-woods",
-    imageSrc: "/images/projects/sanctuary-in-the-woods-2025/poster-1.jpg",
+    imageSrc: "/thumbnails/SITW.png",
     imageAlt: "Sanctuary in the Woods artwork",
   },
   {
@@ -53,7 +52,7 @@ const workItems: WorkItem[] = [
     description:
       "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
     href: "/project/elora",
-    imageSrc: "/videos/thumbnails/elora.png",
+    imageSrc: "/thumbnails/Elora.png",
     imageAlt: "Elora artwork",
   },
   {
@@ -62,7 +61,7 @@ const workItems: WorkItem[] = [
     description:
       "Crafting Timeless Elegance: Establishing an enduring identity for a luxury stone brand",
     href: "/project/helios-stones",
-    videoSrc: "/Helios/Helios%20Thumbnail.mp4",
+    videoSrc: "/thumbnails/Helios%20Thumbnail.mp4",
   },
 ];
 
@@ -205,7 +204,7 @@ export default function Home() {
 
       <SiteFooter
         id="footer"
-        emailHref="mailto:hello@example.com"
+        emailHref="mailto:hello@viswanth.com"
         impactText="MAKING AN IMPACT"
       />
     </main>

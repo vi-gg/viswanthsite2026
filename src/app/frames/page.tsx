@@ -160,7 +160,7 @@ export default function FramesPage() {
 
       <SiteFooter
         id="footer"
-        emailHref="mailto:hello@example.com"
+        emailHref="mailto:hello@viswanth.com"
         impactText="MAKING AN IMPACT"
       />
     </main>
