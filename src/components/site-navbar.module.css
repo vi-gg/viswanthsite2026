@@ -265,7 +265,7 @@
 
   .mobileBrandLogo img {
     display: block;
-    width: 190px;
+    width: clamp(208px, 56vw, 248px);
     height: auto;
   }
 

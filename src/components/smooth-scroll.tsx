@@ -5,7 +5,11 @@ import Lenis from "lenis";
 
 export function SmoothScroll() {
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.matchMedia("(max-width: 1024px)").matches
+    ) {
       return;
     }
 

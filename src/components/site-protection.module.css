@@ -1,7 +1,7 @@
 .toastWrap {
   position: fixed;
   right: 18px;
-  bottom: 22px;
+  top: 22px;
   z-index: 4000;
   pointer-events: none;
 }
@@ -49,12 +49,13 @@
 @media (max-width: 760px) {
   .toastWrap {
     right: 12px;
-    left: 12px;
-    bottom: 16px;
+    top: 12px;
+    left: auto;
   }
 
   .toast {
-    width: 100%;
-    justify-content: center;
+    width: auto;
+    max-width: min(92vw, 420px);
+    justify-content: flex-start;
   }
 }

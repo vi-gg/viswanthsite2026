@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { GoToTop } from "@/components/go-to-top";
+import { SitePreloader } from "@/components/site-preloader";
+import { SiteProtection } from "@/components/site-protection";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import "plyr/dist/plyr.css";
 import "./globals.css";
@@ -86,7 +88,9 @@ export default function RootLayout({
             __html: JSON.stringify([personSchema, websiteSchema]),
           }}
         />
+        <SitePreloader />
         <SmoothScroll />
+        <SiteProtection />
         {children}
         <GoToTop />
       </body>

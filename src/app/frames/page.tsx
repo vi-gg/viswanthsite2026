@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { InViewDualText } from "@/components/in-view-dual-text";
+import { ResponsiveFramesVideo } from "@/components/responsive-frames-video";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
 import { SmartImage } from "@/components/smart-image";
-import { SmartVideo } from "@/components/smart-video";
 import { WORK_PROJECT_COUNT } from "@/lib/work-projects";
 import styles from "./frames.module.css";
 
@@ -138,15 +138,10 @@ export default function FramesPage() {
                     }`}
                   >
                     {frame.type === "video" ? (
-                      <SmartVideo
+                      <ResponsiveFramesVideo
                         className={styles.media}
                         src={frame.src}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                        aria-label={frame.alt}
+                        ariaLabel={frame.alt}
                       />
                     ) : (
                       <SmartImage

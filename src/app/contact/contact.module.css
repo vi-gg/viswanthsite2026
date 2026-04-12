@@ -155,13 +155,13 @@
 
   .title {
     text-align: left;
-    font-size: min(30vw, 180px);
+    font-size: min(24vw, 140px);
   }
 
   .subtitle {
     margin-top: 14px;
     text-align: left;
-    font-size: 24px;
+    font-size: 22px;
     width: min(814px, 100%);
   }
 
