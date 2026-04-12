@@ -5,6 +5,8 @@ import { CaseStudyMediaArranger } from "@/components/case-study-media-arranger";
 import { ShowreelPlayer } from "@/components/showreel-player";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
+import { SmartImage } from "@/components/smart-image";
+import { SmartVideo } from "@/components/smart-video";
 import { getAllProjectSlugs, getProjectPage } from "@/lib/project-pages";
 import { WORK_PROJECT_COUNT } from "@/lib/work-projects";
 import styles from "../../projects/[slug]/project-page.module.css";
@@ -114,7 +116,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 />
               </div>
             ) : (
-              <video
+              <SmartVideo
                 className={styles.heroTexture}
                 src={project.hero.backgroundVideoSrc}
                 autoPlay
@@ -127,7 +129,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             )
           ) : null}
           {project.hero.backgroundImageSrc ? (
-            <img
+            <SmartImage
               className={styles.heroTexture}
               src={project.hero.backgroundImageSrc}
               alt=""
@@ -135,7 +137,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             />
           ) : null}
           {project.hero.logoSrc ? (
-            <img
+            <SmartImage
               className={styles.heroLogo}
               src={project.hero.logoSrc}
               alt={project.hero.logoAlt ?? ""}
@@ -231,19 +233,21 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   href={`/project/${project.nextProject.slug}`}
                   className={styles.nextProjectMedia}
                 >
-                  <video autoPlay muted loop playsInline preload="none">
-                    <source
-                      src={project.nextProject.videoSrc}
-                      type="video/mp4"
-                    />
-                  </video>
+                  <SmartVideo
+                    src={project.nextProject.videoSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="none"
+                  />
                 </Link>
               ) : project.nextProject.imageSrc ? (
                 <Link
                   href={`/project/${project.nextProject.slug}`}
                   className={styles.nextProjectMedia}
                 >
-                  <img
+                  <SmartImage
                     src={project.nextProject.imageSrc}
                     alt={
                       project.nextProject.imageAlt ?? project.nextProject.title
@@ -261,7 +265,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   }
                 >
                   {project.nextProject.logoSrc ? (
-                    <img
+                    <SmartImage
                       src={project.nextProject.logoSrc}
                       alt={
                         project.nextProject.logoAlt ?? project.nextProject.title

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { InViewDualText } from "@/components/in-view-dual-text";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
+import { SmartImage } from "@/components/smart-image";
+import { SmartVideo } from "@/components/smart-video";
 import { WORK_PROJECT_COUNT, visibleWorkProjects } from "@/lib/work-projects";
 import styles from "./work.module.css";
 
@@ -64,8 +66,9 @@ export default function WorkPage() {
                       }
                     >
                       {project.videoSrc ? (
-                        <video
+                        <SmartVideo
                           className={styles.video}
+                          src={project.videoSrc}
                           poster={project.posterSrc}
                           autoPlay
                           muted
@@ -73,18 +76,10 @@ export default function WorkPage() {
                           playsInline
                           preload="none"
                           disablePictureInPicture
-                        >
-                          {project.videoWebmSrc ? (
-                            <source
-                              src={project.videoWebmSrc}
-                              type="video/webm"
-                            />
-                          ) : null}
-                          <source src={project.videoSrc} type="video/mp4" />
-                        </video>
+                        />
                       ) : null}
                       {!project.videoSrc && project.imageSrc ? (
-                        <img
+                        <SmartImage
                           className={styles.image}
                           src={project.imageSrc}
                           alt={project.imageAlt ?? project.label}

@@ -3,6 +3,8 @@ import { InViewDualText } from "@/components/in-view-dual-text";
 import { ShowreelPlayer } from "@/components/showreel-player";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
+import { SmartImage } from "@/components/smart-image";
+import { SmartVideo } from "@/components/smart-video";
 import { WORK_PROJECT_COUNT } from "@/lib/work-projects";
 import styles from "./page.module.css";
 
@@ -131,8 +133,9 @@ export default function Home() {
                     }
                   >
                     {item.videoSrc ? (
-                      <video
+                      <SmartVideo
                         className={styles.workMedia}
+                        src={item.videoSrc}
                         poster={item.posterSrc}
                         autoPlay
                         muted
@@ -140,15 +143,10 @@ export default function Home() {
                         playsInline
                         preload="none"
                         disablePictureInPicture
-                      >
-                        {item.videoWebmSrc ? (
-                          <source src={item.videoWebmSrc} type="video/webm" />
-                        ) : null}
-                        <source src={item.videoSrc} type="video/mp4" />
-                      </video>
+                      />
                     ) : null}
                     {!item.videoSrc && item.imageSrc ? (
-                      <img
+                      <SmartImage
                         src={item.imageSrc}
                         alt={item.imageAlt ?? item.title}
                         className={styles.workMedia}
@@ -182,10 +180,10 @@ export default function Home() {
 
           <ul className={styles.framesGrid}>
             <li className={styles.frameCard}>
-              <img src={imgFramesOne} alt="Frames experiment one" />
+              <SmartImage src={imgFramesOne} alt="Frames experiment one" />
             </li>
             <li className={styles.frameCard}>
-              <video
+              <SmartVideo
                 src={imgFramesTwo}
                 autoPlay
                 muted
@@ -195,7 +193,7 @@ export default function Home() {
               />
             </li>
             <li className={styles.frameCard}>
-              <img src={imgFramesThree} alt="Frames experiment three" />
+              <SmartImage src={imgFramesThree} alt="Frames experiment three" />
             </li>
           </ul>
 

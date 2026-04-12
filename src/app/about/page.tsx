@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { InViewDualText } from "@/components/in-view-dual-text";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
+import { SmartImage } from "@/components/smart-image";
 import { WORK_PROJECT_COUNT } from "@/lib/work-projects";
 import styles from "./about.module.css";
 
@@ -43,7 +44,7 @@ export default function AboutPage() {
           <div className={styles.contentContainer}>
             <div className={styles.contentGrid}>
               <div className={styles.portraitPlaceholder}>
-                <img
+                <SmartImage
                   className={styles.portraitImage}
                   src="/viswanth-photo.png"
                   alt="Portrait of Viswanth"

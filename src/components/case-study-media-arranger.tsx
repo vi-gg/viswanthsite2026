@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { SmartImage } from "@/components/smart-image";
+import { SmartVideo } from "@/components/smart-video";
 import type { ProjectPageSection } from "@/lib/project-pages";
 
 type CaseStudyMediaArrangerProps = {
@@ -110,7 +112,7 @@ export function CaseStudyMediaArranger({
                     : undefined
                 }
               >
-                <img src={section.src} alt={section.alt} />
+                <SmartImage src={section.src} alt={section.alt} />
               </figure>
             );
           }
@@ -133,7 +135,7 @@ export function CaseStudyMediaArranger({
                     : undefined
                 }
               >
-                <video
+                <SmartVideo
                   src={section.src}
                   poster={section.posterSrc}
                   autoPlay
@@ -241,7 +243,7 @@ export function CaseStudyMediaArranger({
                       </span>
                       {"src" in section && section.src ? (
                         section.type === "video" ? (
-                          <video
+                          <SmartVideo
                             className={classes.arrangeThumb}
                             src={section.src}
                             muted
@@ -249,7 +251,7 @@ export function CaseStudyMediaArranger({
                             preload="metadata"
                           />
                         ) : (
-                          <img
+                          <SmartImage
                             className={classes.arrangeThumb}
                             src={section.src}
                             alt={section.id}

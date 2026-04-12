@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "@/app/page.module.css";
+import { mediaAssetUrl, webmVariant } from "@/lib/media-asset";
 import type Plyr from "plyr";
 
 type ShowreelPlayerProps = {
@@ -52,7 +53,7 @@ export function ShowreelPlayer({
         hideControls: true,
         clickToPlay: true,
         keyboard: { focused: true, global: false },
-        iconUrl: "/plyr.svg",
+        iconUrl: mediaAssetUrl("/plyr.svg"),
       });
 
       plyrRef.current.on("play", () => {
@@ -78,16 +79,24 @@ export function ShowreelPlayer({
         className={styles.showreelVideo}
         playsInline
         preload="metadata"
-        poster={posterSrc}
+        poster={mediaAssetUrl(posterSrc)}
         controlsList="nodownload noplaybackrate noremoteplayback"
         disablePictureInPicture
         disableRemotePlayback
         onContextMenu={(event) => event.preventDefault()}
         aria-label={title}
       >
-        <source src={src} type="video/mp4" />
+        {webmVariant(src) ? (
+          <source src={mediaAssetUrl(webmVariant(src))} type="video/webm" />
+        ) : null}
+        <source src={mediaAssetUrl(src)} type="video/mp4" />
         {captionsSrc ? (
-          <track kind="captions" srcLang="en" src={captionsSrc} default />
+          <track
+            kind="captions"
+            srcLang="en"
+            src={mediaAssetUrl(captionsSrc)}
+            default
+          />
         ) : null}
         Your browser does not support the video tag.
       </video>

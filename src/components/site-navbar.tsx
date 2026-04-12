@@ -1,6 +1,7 @@
 "use client";
 
 import { type CSSProperties, useEffect, useMemo, useState } from "react";
+import { mediaAssetUrl } from "@/lib/media-asset";
 import styles from "./site-navbar.module.css";
 
 type NavLink = {
@@ -190,7 +191,7 @@ export function SiteNavbar({
             </ul>
             <a href="/" className={styles.brandLogo} aria-label="Home">
               <img
-                src="/Viswanth%20Gudiwada%20Navbar%20Logo.svg"
+                src={mediaAssetUrl("/Viswanth%20Gudiwada%20Navbar%20Logo.svg")}
                 alt="Viswanth Gudiwada"
               />
             </a>
@@ -211,7 +212,7 @@ export function SiteNavbar({
 
           <a href="/" className={styles.mobileBrandLogo} aria-label="Home">
             <img
-              src="/Viswanth%20Gudiwada%20Navbar%20Logo.svg"
+              src={mediaAssetUrl("/Viswanth%20Gudiwada%20Navbar%20Logo.svg")}
               alt="Viswanth Gudiwada"
             />
           </a>

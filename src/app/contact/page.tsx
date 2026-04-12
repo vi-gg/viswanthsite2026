@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { InViewDualText } from "@/components/in-view-dual-text";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
+import { SmartImage } from "@/components/smart-image";
 import { WORK_PROJECT_COUNT } from "@/lib/work-projects";
 import styles from "./contact.module.css";
 
@@ -70,7 +71,7 @@ export default function ContactPage() {
                 <div className={styles.marqueeGroup}>
                   {contactImages.map((item) => (
                     <figure key={item.id} className={styles.card}>
-                      <img
+                      <SmartImage
                         className={styles.cardImage}
                         src={item.src}
                         alt={item.alt}
@@ -81,7 +82,7 @@ export default function ContactPage() {
                 <div className={styles.marqueeGroup} aria-hidden="true">
                   {contactImages.map((item) => (
                     <figure key={`${item.id}-copy`} className={styles.card}>
-                      <img
+                      <SmartImage
                         className={styles.cardImage}
                         src={item.src}
                         alt=""

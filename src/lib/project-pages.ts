@@ -156,7 +156,7 @@ const nextProjectPreviewFallback: Record<
     imageSrc: "/videos/thumbnails/onedowntown.png",
     imageAlt: "One Downtown preview",
   },
-  "viscomm": {
+  viscomm: {
     videoSrc: "/thumbnails/Viscomm.mp4",
     imageAlt: "Loyola Viscomm preview",
   },
@@ -203,8 +203,8 @@ const adapsPage: ProjectPageData = {
   title: "Adaps",
   year: "2025",
   intro: [
-    "With over 60 years shaping Australia’s technology landscape, ADAPS stands as the nation’s oldest, most trusted IT partner. Their legacy of innovation, industry partnerships, and enduring client relationships set the stage for a new challenge: to evolve their visual identity while honouring their heritage and reinforcing their reputation with today’s decision-makers.",
-    "This project wasn’t about starting over, it was about carefully bridging six decades of trust with a sophisticated new visual language that would propel Adaps confidently into the future.",
+    "With over 60 years shaping Australia's technology landscape, ADAPS stands as the nation's oldest, most trusted IT partner. Their legacy of innovation, industry partnerships, and enduring client relationships set the stage for a new challenge: to evolve their visual identity while honouring their heritage and reinforcing their reputation with today's decision-makers.",
+    "This project wasn't about starting over, it was about carefully bridging six decades of trust with a sophisticated new visual language that would propel Adaps confidently into the future.",
   ],
   facts: [
     { label: "Client", value: "Adaps IT Pvt. Ltd." },
@@ -328,7 +328,7 @@ const adapsPage: ProjectPageData = {
     },
   ],
   summary:
-    "The result is a refined and scalable identity system that communicates with clarity, reflects Adaps’ experience, and positions the brand as a modern, solution-focused global partner.",
+    "The result is a refined and scalable identity system that communicates with clarity, reflects Adaps' experience, and positions the brand as a modern, solution-focused global partner.",
   nextProject: {
     slug: "sanctuary-in-the-woods",
     title: "Sanctuary in the Woods",
@@ -345,7 +345,7 @@ const sanctuaryPage: ProjectPageData = {
   year: "2025",
   intro: [
     "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
-    "Sanctuary in the Woods is not just another plotted development project, it's a nature-first retreat designed for those seeking clarity, calm, and connection. My approach was to translate this ethos into a brand that doesn’t speak louder than nature, but flows with it.",
+    "Sanctuary in the Woods is not just another plotted development project, it's a nature-first retreat designed for those seeking clarity, calm, and connection. My approach was to translate this ethos into a brand that doesn't speak louder than nature, but flows with it.",
     "Over the course of 2 months, I designed the entire brand identity, from the logo and visual system to the brochure, type system, and messaging. And yes! I had a lot of fun doing it.",
   ],
   facts: [
@@ -501,7 +501,7 @@ const sanctuaryPage: ProjectPageData = {
     },
   ],
   summary:
-    "Sanctuary in the Woods was a chance to slow down and listen. To design with intention, and to build an identity that doesn’t overpower, but coexists. In two months, we created a system that feels rooted, honest, and alive.",
+    "Sanctuary in the Woods was a chance to slow down and listen. To design with intention, and to build an identity that doesn't overpower, but coexists. In two months, we created a system that feels rooted, honest, and alive.",
   nextProject: {
     slug: "holmes-ai",
     title: "Holmes AI",
@@ -518,8 +518,8 @@ const eloraPage: ProjectPageData = {
   slug: "elora",
   title: "Elora",
   intro: [
-    "Elora is envisioned as Andhra Pradesh’s first Grade A commercial office tower, positioned in Vizag’s emerging business corridor. The project is not just about creating office space, it is about establishing a new benchmark for how businesses experience infrastructure in the state.",
-    "This case study captures the process of building a brand that reflects this shift, from identity to communication, and finally, to a printed experience that carries the same weight as the architecture itself.",
+    "Elora is envisioned as Andhra Pradesh's first Grade A commercial office tower, positioned in Vizag's emerging business corridor. The project is not just about creating office space, it is about establishing a new benchmark for how businesses experience infrastructure in the state.",
+    "This case study captures the process of building a brand that reflects this shift\u2014from identity to communication, and finally, to a printed experience that carries the same weight as the architecture itself.",
   ],
   year: "2025",
   facts: [
@@ -675,65 +675,13 @@ const eloraPage: ProjectPageData = {
   },
 };
 
-function createScaffoldProjectPage(
-  slug: string,
-  title: string,
-  year: string,
-  nextProjectSlug?: string,
-): ProjectPageData {
-  const nextProject =
-    projectOrder.find((project) => project.slug === nextProjectSlug) ??
-    getNextProject(slug);
-
-  return {
-    slug,
-    title,
-    year,
-    intro: [
-      `${title} now has a dedicated project route in the shared long-form case study system.`,
-      "Content, images, and final art direction can be layered into this page without rebuilding the structure.",
-    ],
-    facts: [
-      { label: "Status", value: "Case study in progress" },
-      { label: "Year", value: year },
-      { label: "Layout", value: "Shared project page system" },
-    ],
-    hero: {
-      backgroundColor: "#d1d2d6",
-    },
-    sections: [
-      {
-        id: "overview",
-        type: "placeholder",
-        title: title,
-      },
-      {
-        id: "gallery-1",
-        type: "placeholder",
-      },
-      {
-        id: "gallery-2",
-        type: "placeholder",
-      },
-    ],
-    summary:
-      "This page scaffold is ready for project-specific content whenever the design and asset set are available.",
-    nextProject: {
-      slug: nextProject.slug,
-      title: nextProject.title,
-      category: "Brand Identity Design",
-      year: nextProject.year,
-    },
-  };
-}
-
 const heliosPage: ProjectPageData = {
   slug: "helios-stones",
   title: "Helios",
   year: "2025",
   intro: [
     "Helios, a leader in luxury stone, and largest stone atelier in the country, needed a brand identity that reflected their heritage and quality. Through careful design, we crafted an identity for them that reflected their heritage, quality, scale, and excellence.",
-    "Helios Logo mark was created with the intersection of a circle and square - blend of stability and perfection, at the intersection lies ‘H’ symbolizing Helios.",
+    "Helios Logo mark was created with the intersection of a circle and square - blend of stability and perfection, at the intersection lies 'H' symbolizing Helios.",
   ],
   facts: [
     { label: "Client", value: "Helios Stone Studio" },
@@ -849,7 +797,7 @@ const heliosPage: ProjectPageData = {
     },
   ],
   summary:
-    "Helios identity project marks a significant milestone in redefining the brand’s presence in stone industry. The final design is a reflection of helios’ dedicated to quality, sprawling atelier, and innate timelessness.",
+    "Helios identity project marks a significant milestone in redefining the brand's presence in stone industry. The final design is a reflection of helios' dedicated to quality, sprawling atelier, and innate timelessness.",
   nextProject: {
     slug: "one-downtown",
     title: "One Downtown",
@@ -1271,9 +1219,8 @@ const e5HospitalityPage: ProjectPageData = {
   title: "E5 Hospitality",
   year: "2024",
   intro: [
-    "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
-    "Sanctuary in the Woods is not just another plotted development project, it's a nature-first retreat designed for those seeking clarity, calm, and connection. My approach was to translate this ethos into a brand that doesn’t speak louder than nature, but flows with it.",
-    "Over the course of 2 months, I designed the entire brand identity, from the logo and visual system to the brochure, type system, and messaging. And yes! I had a lot of fun doing it.",
+    "E5 Hospitality is a forward-looking venture into South India's luxury hospitality landscape. Backed by the legacy of RR Corp, a trusted name in real estate for over three decades, E5 marks a shift from building spaces to curating experiences.",
+    "The goal was to create a brand identity that reflects this, one that feels refined, contemporary, and deeply rooted in experiential luxury.",
   ],
   facts: [
     { label: "Client", value: "E5 Hospitality" },
@@ -1476,9 +1423,7 @@ const rootcosPage: ProjectPageData = {
   title: "Rootcos",
   year: "2023",
   intro: [
-    "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
-    "Sanctuary in the Woods is not just another plotted development project, it's a nature-first retreat designed for those seeking clarity, calm, and connection. My approach was to translate this ethos into a brand that doesn’t speak louder than nature, but flows with it.",
-    "Over the course of 2 months, I designed the entire brand identity, from the logo and visual system to the brochure, type system, and messaging. And yes! I had a lot of fun doing it.",
+    'Rootcos is India\'s first scalp-care brand created by the founders of the science-driven skincare label Deconstruct Skincare, positioning scalp health as an extension of skin care rather than just "hair care." The brand aims to change how people view scalp concerns, shifting from generic hair maintenance to targeted, clinical-style solutions that feel progressive, youthful, and inclusive of all genders.',
   ],
   facts: [
     { label: "Client", value: "Rootcos" },
@@ -1562,7 +1507,7 @@ const charminarGinPage: ProjectPageData = {
   year: "2025",
   intro: [
     "Hyderabad is not a city you understand at once. It reveals itself slowly, through its architecture, its food, its people, and the quiet rhythm of its everyday life. Built over centuries, shaped by multiple influences, it exists as a layered cultural experience.",
-    "Charminar Gin was conceived as a premium craft gin rooted in this very idea - not just representing Hyderabad, but translating its essence into a sensory and visual experience. The challenge was clear: How do you capture a city’s complexity without reducing it to clichés?",
+    "Charminar Gin was conceived as a premium craft gin rooted in this very idea - not just representing Hyderabad, but translating its essence into a sensory and visual experience. The challenge was clear: How do you capture a city's complexity without reducing it to cliches?",
   ],
   facts: [
     { label: "Client", value: "Charminar GIN" },
@@ -1746,6 +1691,7 @@ const snnRajCorp2026Page: ProjectPageData = {
   ],
   hero: {
     backgroundColor: "#111111",
+    backgroundVideoSrc: "/SNN%20Raj%20Corp/SNN-hero.mp4",
     hideFallbackTitle: true,
   },
   sections: [

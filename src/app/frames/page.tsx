@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { InViewDualText } from "@/components/in-view-dual-text";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
+import { SmartImage } from "@/components/smart-image";
+import { SmartVideo } from "@/components/smart-video";
 import { WORK_PROJECT_COUNT } from "@/lib/work-projects";
 import styles from "./frames.module.css";
 
@@ -136,7 +138,7 @@ export default function FramesPage() {
                     }`}
                   >
                     {frame.type === "video" ? (
-                      <video
+                      <SmartVideo
                         className={styles.media}
                         src={frame.src}
                         autoPlay
@@ -147,7 +149,7 @@ export default function FramesPage() {
                         aria-label={frame.alt}
                       />
                     ) : (
-                      <img
+                      <SmartImage
                         className={styles.media}
                         src={frame.src}
                         alt={frame.alt}
