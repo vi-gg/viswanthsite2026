@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { InViewDualText } from "@/components/in-view-dual-text";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
 import { WORK_PROJECT_COUNT } from "@/lib/work-projects";
@@ -43,11 +44,20 @@ export default function ContactPage() {
 
       <section className={styles.heroSection}>
         <div className={styles.container}>
-          <h1 className={styles.title}>CONTACT</h1>
+          <h1 className={styles.title}>
+            <InViewDualText text="CONTACT" />
+          </h1>
           <p className={styles.subtitle}>
-            Interested in working together? For work enquiries and availability
-            <br />
-            You can email me hello@viswanth.com
+            <span className={styles.subtitleLead}>
+              Interested in working together? For work enquiries and
+              availability
+            </span>
+            <span className={styles.subtitleEmail}>
+              You can email me{" "}
+              <a href="mailto:hello@viswanth.com" className={styles.emailLink}>
+                hello@viswanth.com
+              </a>
+            </span>
           </p>
         </div>
       </section>

@@ -33,6 +33,13 @@
   width: 33px;
   height: 23px;
   flex: none;
+  transform: translateY(4px);
+  transition: transform 0.22s ease;
+}
+
+.sayHello:hover .sayHelloArrow,
+.sayHello:focus-visible .sayHelloArrow {
+  transform: translate(6px, 4px);
 }
 
 .socials {
@@ -62,6 +69,12 @@
 .impactWrap {
   position: relative;
   width: 100%;
+  overflow: hidden;
+}
+
+.impactReveal {
+  --mask-bleed: 0.02em;
+  display: block;
 }
 
 .impactMeasure {
@@ -108,5 +121,9 @@
   .impact {
     margin-top: 22px;
     font-size: min(18vw, 84px);
+  }
+
+  .impactReveal {
+    --mask-bleed: 0;
   }
 }

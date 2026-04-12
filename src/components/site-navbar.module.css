@@ -5,7 +5,6 @@
   padding-top: 32px;
   padding-bottom: 32px;
   transition: transform 0.26s ease;
-  will-change: transform;
 }
 
 .container {
@@ -71,6 +70,73 @@
   justify-self: end;
 }
 
+.desktopNavLink {
+  display: inline-flex;
+  align-items: flex-start;
+  opacity: 1;
+}
+
+.desktopNavLink:hover {
+  opacity: 1;
+}
+
+.desktopNavLabel {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 1px;
+}
+
+.workCountHoverWrap {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  overflow: hidden;
+  overflow: clip;
+  height: 1em;
+  line-height: 1;
+}
+
+.hoverWord {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  overflow: hidden;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.word {
+  grid-area: 1 / 1;
+  display: inline-flex;
+}
+
+.letter {
+  display: inline-block;
+  will-change: transform;
+  transition: transform 0.5s cubic-bezier(0.2, 0.65, 0.2, 1);
+  transition-delay: calc(var(--i) * 0.04s);
+}
+
+.wordTop .letter {
+  transform: translateY(0%);
+}
+
+.wordBottom .letter {
+  color: #30bdff;
+  transform: translateY(120%);
+}
+
+.desktopNavLink:hover .wordTop .letter,
+.desktopNavLink:focus-visible .wordTop .letter {
+  transform: translateY(-120%);
+}
+
+.desktopNavLink:hover .wordBottom .letter,
+.desktopNavLink:focus-visible .wordBottom .letter {
+  transform: translateY(0%);
+}
+
 .brandLogo {
   display: inline-flex;
   align-items: center;
@@ -95,9 +161,39 @@
 }
 
 .workCount {
+  display: inline-block;
   font-size: 0.62em;
   line-height: 1;
   transform: translateY(-0.36em);
+}
+
+.workCountDesktop {
+  transform: translateY(-0.28em);
+}
+
+.workCountDesktopTop,
+.workCountDesktopBottom {
+  grid-area: 1 / 1;
+  transition: transform 0.5s cubic-bezier(0.2, 0.65, 0.2, 1);
+}
+
+.workCountDesktopTop {
+  transform: translateY(-0.28em);
+}
+
+.workCountDesktopBottom {
+  color: #30bdff;
+  transform: translateY(1.28em);
+}
+
+.desktopNavLink:hover .workCountDesktopTop,
+.desktopNavLink:focus-visible .workCountDesktopTop {
+  transform: translateY(-1.28em);
+}
+
+.desktopNavLink:hover .workCountDesktopBottom,
+.desktopNavLink:focus-visible .workCountDesktopBottom {
+  transform: translateY(-0.28em);
 }
 
 .menuButton {
@@ -142,7 +238,7 @@
   display: none;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 760px), (max-height: 500px) and (orientation: landscape) {
   .header {
     padding-top: 32px;
     padding-bottom: 32px;
@@ -152,6 +248,10 @@
     justify-content: space-between;
   }
 
+  .navWrap {
+    z-index: 1301;
+  }
+
   .desktopLinks {
     display: none;
   }
@@ -159,6 +259,8 @@
   .mobileBrandLogo {
     display: inline-flex;
     align-items: center;
+    position: relative;
+    z-index: 1302;
   }
 
   .mobileBrandLogo img {
@@ -169,12 +271,15 @@
 
   .menuButton {
     display: inline-flex;
+    position: relative;
+    z-index: 1302;
   }
 
   .mobileMenu {
     position: fixed;
     inset: 0;
-    z-index: 1100;
+    min-height: 100dvh;
+    z-index: 1300;
     display: block;
     opacity: 0;
     visibility: hidden;
@@ -202,7 +307,7 @@
 
   .mobileNavList {
     list-style: none;
-    height: 100%;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -248,5 +353,59 @@
 
   .mobileNavItem {
     font-size: clamp(28px, 12vw, 52px);
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .header {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .mobileBrandLogo img {
+    width: 154px;
+  }
+
+  .mobileNavList {
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 86px 16px 20px;
+    overflow-y: auto;
+  }
+
+  .mobileNavItem {
+    font-size: clamp(24px, 8vh, 42px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .letter {
+    transition: none;
+  }
+
+  .workCountDesktopTop,
+  .workCountDesktopBottom {
+    transition: none;
+  }
+
+  .desktopNavLink:hover .wordTop .letter,
+  .desktopNavLink:focus-visible .wordTop .letter {
+    transform: translateY(0%);
+  }
+
+  .desktopNavLink:hover .wordBottom .letter,
+  .desktopNavLink:focus-visible .wordBottom .letter {
+    transform: translateY(120%);
+  }
+
+  .desktopNavLink:hover .workCountDesktopTop,
+  .desktopNavLink:focus-visible .workCountDesktopTop {
+    transform: translateY(-0.28em);
+  }
+
+  .desktopNavLink:hover .workCountDesktopBottom,
+  .desktopNavLink:focus-visible .workCountDesktopBottom {
+    transform: translateY(1.28em);
   }
 }

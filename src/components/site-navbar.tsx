@@ -34,6 +34,62 @@ export function SiteNavbar({
     () => [...leftLinks, ...rightLinks],
     [leftLinks, rightLinks],
   );
+  const getLinkAriaLabel = (link: NavLink) => {
+    if (link.id === "work" && workCount !== undefined) {
+      return `${link.label} ${workCount}`;
+    }
+
+    return link.label;
+  };
+
+  const renderAnimatedLabel = (link: NavLink) => {
+    const letters = Array.from(link.label);
+    const workCountText = workCount?.toString();
+
+    return (
+      <span className={styles.desktopNavLabel}>
+        <span className={styles.hoverWord} aria-hidden="true">
+          <span className={`${styles.word} ${styles.wordTop}`}>
+            {letters.map((char, index) => (
+              <span
+                key={`${link.id}-top-${char}-${index}`}
+                className={styles.letter}
+                style={{ "--i": index } as CSSProperties}
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+          </span>
+          <span className={`${styles.word} ${styles.wordBottom}`}>
+            {letters.map((char, index) => (
+              <span
+                key={`${link.id}-bottom-${char}-${index}`}
+                className={styles.letter}
+                style={{ "--i": index } as CSSProperties}
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+          </span>
+        </span>
+        {link.id === "work" && workCountText ? (
+          <span className={styles.workCountHoverWrap} aria-hidden="true">
+            <sup
+              className={`${styles.workCount} ${styles.workCountDesktop} ${styles.workCountDesktopTop}`}
+            >
+              {workCountText}
+            </sup>
+            <sup
+              className={`${styles.workCount} ${styles.workCountDesktop} ${styles.workCountDesktopBottom}`}
+            >
+              {workCountText}
+            </sup>
+          </span>
+        ) : null}
+      </span>
+    );
+  };
+
   const renderLabel = (link: NavLink) => {
     if (link.id !== "work" || workCount === undefined) {
       return link.label;
@@ -48,48 +104,22 @@ export function SiteNavbar({
   };
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 993px)");
+    const compactNavQuery = window.matchMedia(
+      "(max-width: 760px), (max-height: 500px) and (orientation: landscape)",
+    );
 
-    const handleDesktop = (event: MediaQueryListEvent) => {
-      if (event.matches) {
+    const handleNavModeChange = (event: MediaQueryListEvent) => {
+      if (!event.matches) {
         setIsMenuOpen(false);
       }
     };
 
-    mediaQuery.addEventListener("change", handleDesktop);
+    compactNavQuery.addEventListener("change", handleNavModeChange);
 
     return () => {
-      mediaQuery.removeEventListener("change", handleDesktop);
+      compactNavQuery.removeEventListener("change", handleNavModeChange);
     };
   }, []);
-
-  useEffect(() => {
-    if (!isMenuOpen) {
-      return;
-    }
-
-    const scrollY = window.scrollY;
-    const previousBodyOverflow = document.body.style.overflow;
-    const previousBodyPosition = document.body.style.position;
-    const previousBodyTop = document.body.style.top;
-    const previousBodyWidth = document.body.style.width;
-    const previousHtmlOverflow = document.documentElement.style.overflow;
-
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = "100%";
-
-    return () => {
-      document.documentElement.style.overflow = previousHtmlOverflow;
-      document.body.style.overflow = previousBodyOverflow;
-      document.body.style.position = previousBodyPosition;
-      document.body.style.top = previousBodyTop;
-      document.body.style.width = previousBodyWidth;
-      window.scrollTo(0, scrollY);
-    };
-  }, [isMenuOpen]);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -136,7 +166,7 @@ export function SiteNavbar({
   return (
     <header
       className={`${styles.header} ${headerToneClass} ${
-        isNavHidden ? styles.headerHidden : ""
+        !isMenuOpen && isNavHidden ? styles.headerHidden : ""
       }`}
     >
       <div className={styles.container}>
@@ -148,7 +178,13 @@ export function SiteNavbar({
             <ul className={styles.navGroup}>
               {leftLinks.map((link) => (
                 <li key={link.id}>
-                  <a href={link.href}>{renderLabel(link)}</a>
+                  <a
+                    href={link.href}
+                    className={styles.desktopNavLink}
+                    aria-label={getLinkAriaLabel(link)}
+                  >
+                    {renderAnimatedLabel(link)}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -161,7 +197,13 @@ export function SiteNavbar({
             <ul className={styles.navGroup}>
               {rightLinks.map((link) => (
                 <li key={link.id}>
-                  <a href={link.href}>{renderLabel(link)}</a>
+                  <a
+                    href={link.href}
+                    className={styles.desktopNavLink}
+                    aria-label={getLinkAriaLabel(link)}
+                  >
+                    {renderAnimatedLabel(link)}
+                  </a>
                 </li>
               ))}
             </ul>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { InViewDualText } from "@/components/in-view-dual-text";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
 import { WORK_PROJECT_COUNT, visibleWorkProjects } from "@/lib/work-projects";
@@ -32,7 +33,9 @@ export default function WorkPage() {
 
       <section className={styles.hero} aria-label="Intro">
         <div className={styles.heroTitleWrap}>
-          <h1 className={styles.heroTitle}>WORK</h1>
+          <h1 className={styles.heroTitle}>
+            <InViewDualText text="WORK" />
+          </h1>
         </div>
         <p className={styles.heroDescription}>
           My work sits at the intersection of visual design, motion, and

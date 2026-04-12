@@ -7,6 +7,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { InViewDualText } from "./in-view-dual-text";
 import styles from "./site-footer.module.css";
 
 type SocialLink = {
@@ -76,8 +77,8 @@ export function SiteFooter({
     }
 
     const nextSize = Math.max(
-      28,
-      (containerWidth / measuredWidth) * measurementBaseSize,
+      12,
+      ((containerWidth - 2) / measuredWidth) * measurementBaseSize,
     );
 
     setImpactSize((currentSize) => {
@@ -154,7 +155,7 @@ export function SiteFooter({
         <p className={styles.copyright}>{copyrightText}</p>
         <div className={styles.impactWrap} ref={impactWrapRef}>
           <p className={styles.impact} style={impactStyle}>
-            {impactText}
+            <InViewDualText text={impactText} className={styles.impactReveal} />
           </p>
           <span
             ref={impactMeasureRef}

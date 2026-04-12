@@ -1,0 +1,68 @@
+.root {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+}
+
+.dualWord {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  overflow: hidden;
+  padding-inline: var(--mask-bleed, 0.045em);
+  margin-inline: calc(var(--mask-bleed, 0.045em) * -1);
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.word {
+  grid-area: 1 / 1;
+  display: inline-flex;
+}
+
+.letter {
+  display: inline-block;
+  will-change: transform;
+  transition: transform 0.56s cubic-bezier(0.2, 0.65, 0.2, 1);
+  transition-delay: calc(var(--i) * 0.04s);
+}
+
+.wordTop .letter {
+  transform: translateY(0%);
+}
+
+.wordBottom .letter {
+  color: inherit;
+  transform: translateY(120%);
+}
+
+.visible .wordTop .letter {
+  transform: translateY(-120%);
+}
+
+.visible .wordBottom .letter {
+  transform: translateY(0%);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .letter {
+    transition: none;
+  }
+
+  .wordBottom {
+    display: none;
+  }
+}

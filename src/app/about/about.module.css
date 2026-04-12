@@ -29,8 +29,8 @@
   line-height: 0.9;
   letter-spacing: -0.03em;
   color: #30bdff;
-  -webkit-text-stroke: 1px #000000;
-  text-stroke: 1px #000000;
+  -webkit-text-stroke: 0.5px #000000;
+  text-stroke: 0.5px #000000;
 }
 
 .contentSection {
@@ -87,6 +87,16 @@
   color: #131a26;
   font-size: clamp(22px, 1.8vw, 26px);
   line-height: 1.15;
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease;
+}
+
+.resumeButton:hover,
+.resumeButton:focus-visible {
+  background: #30bdff;
+  color: #131a26;
+  opacity: 1;
 }
 
 @media (max-width: 1100px) {

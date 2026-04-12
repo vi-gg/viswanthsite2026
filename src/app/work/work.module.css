@@ -30,8 +30,8 @@
   font-size: clamp(96px, 21vw, 417px);
   line-height: 0.95;
   letter-spacing: -0.03em;
-  -webkit-text-stroke: 1px #000000;
-  text-stroke: 1px #000000;
+  -webkit-text-stroke: 0.5px #000000;
+  text-stroke: 0.5px #000000;
   max-width: 100%;
   text-align: center;
 }
@@ -65,7 +65,7 @@
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 30px 8px;
+  gap: 30px 20px;
 }
 
 .card {
@@ -152,7 +152,7 @@
 @media (max-width: 1100px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px 12px;
+    gap: 24px 20px;
   }
 
   .heroDescription {

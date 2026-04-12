@@ -29,25 +29,61 @@
   line-height: 0.9;
   letter-spacing: -0.03em;
   color: #30bdff;
-  -webkit-text-stroke: 1px #000000;
-  text-stroke: 1px #000000;
+  -webkit-text-stroke: 0.5px #000000;
+  text-stroke: 0.5px #000000;
 }
 
 .subtitle {
-  width: min(814px, 100%);
+  width: min(1080px, 100%);
   margin: 30px auto 0;
   text-align: center;
   font-size: clamp(24px, 2.1vw, 40px);
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: #1b1b1b;
+  text-wrap: balance;
+}
+
+.subtitleLead,
+.subtitleEmail {
+  display: block;
+}
+
+.subtitleEmail {
+  margin-top: 0.42em;
+}
+
+@media (min-width: 1200px) {
+  .subtitleLead {
+    white-space: nowrap;
+  }
+}
+
+.emailLink {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.1em;
+  transition:
+    color 0.22s ease,
+    text-decoration-color 0.22s ease;
+}
+
+.emailLink:hover,
+.emailLink:focus-visible {
+  color: #30bdff;
+  text-decoration-color: #30bdff;
+  opacity: 1;
 }
 
 .gridSection {
   padding: 52px 0 0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
 .gridSection .container {
+  max-width: none;
+  padding: 0;
   padding-bottom: 0;
 }
 
@@ -126,6 +162,7 @@
     margin-top: 14px;
     text-align: left;
     font-size: 24px;
+    width: min(814px, 100%);
   }
 
   .gridSection {
@@ -133,6 +170,8 @@
   }
 
   .gridSection .container {
+    max-width: none;
+    padding: 0;
     padding-bottom: 0;
   }
 

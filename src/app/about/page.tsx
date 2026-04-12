@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { InViewDualText } from "@/components/in-view-dual-text";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
 import { WORK_PROJECT_COUNT } from "@/lib/work-projects";
@@ -31,7 +32,9 @@ export default function AboutPage() {
 
       <section className={styles.heroSection}>
         <div className={styles.container}>
-          <h1 className={styles.aboutTitle}>ABOUT</h1>
+          <h1 className={styles.aboutTitle}>
+            <InViewDualText text="ABOUT" />
+          </h1>
         </div>
       </section>
 

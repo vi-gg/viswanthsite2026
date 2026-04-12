@@ -99,8 +99,8 @@
   line-height: 0.9;
   letter-spacing: -0.03em;
   color: #30bdff;
-  -webkit-text-stroke: 1px #000000;
-  text-stroke: 1px #000000;
+  -webkit-text-stroke: 0.5px #000000;
+  text-stroke: 0.5px #000000;
   text-align: center;
 }
 
@@ -184,6 +184,16 @@
   color: #131a26;
   font-size: clamp(18px, 1.3vw, 26px);
   line-height: 1.1;
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease;
+}
+
+.cta:hover,
+.cta:focus-visible {
+  background: #30bdff;
+  color: #131a26;
+  opacity: 1;
 }
 
 .framesSection {
@@ -196,8 +206,8 @@
   line-height: 0.9;
   letter-spacing: -0.03em;
   color: #30bdff;
-  -webkit-text-stroke: 1px #000000;
-  text-stroke: 1px #000000;
+  -webkit-text-stroke: 0.5px #000000;
+  text-stroke: 0.5px #000000;
   text-align: center;
 }
 

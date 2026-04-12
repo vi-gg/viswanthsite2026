@@ -176,6 +176,10 @@
   border: 0.5px solid #131415;
 }
 
+.pageElora .mediaCardBordered {
+  border-color: #000000;
+}
+
 .calloutSection {
   width: min(1236px, 100%);
   margin: 0 auto;

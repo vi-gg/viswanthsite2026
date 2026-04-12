@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FramesParallax } from "@/components/frames-parallax";
+import { InViewDualText } from "@/components/in-view-dual-text";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
 import { WORK_PROJECT_COUNT } from "@/lib/work-projects";
@@ -106,57 +106,60 @@ const frames = [
 export default function FramesPage() {
   return (
     <main className={styles.page}>
-      <FramesParallax />
       <SiteNavbar
         leftLinks={leftNavLinks}
         rightLinks={rightNavLinks}
         workCount={WORK_PROJECT_COUNT}
       />
 
-      <section className={styles.heroSection}>
-        <div className={styles.container}>
-          <h1 className={styles.title}>FRAMES</h1>
-          <p className={styles.subtitle}>
-            Showcasing my experiments with type, motiondesign, design concepts
-            that did not make the final cut and fun explorations.
-          </p>
-        </div>
-      </section>
+      <div className={styles.stickyStage}>
+        <section className={styles.heroSection}>
+          <div className={styles.container}>
+            <h1 className={styles.title}>
+              <InViewDualText text="FRAMES" />
+            </h1>
+            <p className={styles.subtitle}>
+              Showcasing my experiments with type, motiondesign, design concepts
+              that did not make the final cut and fun explorations.
+            </p>
+          </div>
+        </section>
 
-      <section className={styles.gallerySection}>
-        <div className={styles.container}>
-          <ul className={styles.gallery}>
-            {frames.map((frame) => (
-              <li key={frame.id} className={styles.card}>
-                <div
-                  className={`${styles.mediaWrap} ${
-                    frame.type === "image" ? "img-container" : ""
-                  }`}
-                >
-                  {frame.type === "video" ? (
-                    <video
-                      className={styles.media}
-                      src={frame.src}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
-                      aria-label={frame.alt}
-                    />
-                  ) : (
-                    <img
-                      className={styles.media}
-                      src={frame.src}
-                      alt={frame.alt}
-                    />
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+        <section className={styles.gallerySection}>
+          <div className={styles.container}>
+            <ul className={styles.gallery}>
+              {frames.map((frame) => (
+                <li key={frame.id} className={styles.card}>
+                  <div
+                    className={`${styles.mediaWrap} ${
+                      frame.type === "image" ? "img-container" : ""
+                    }`}
+                  >
+                    {frame.type === "video" ? (
+                      <video
+                        className={styles.media}
+                        src={frame.src}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                        aria-label={frame.alt}
+                      />
+                    ) : (
+                      <img
+                        className={styles.media}
+                        src={frame.src}
+                        alt={frame.alt}
+                      />
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </div>
 
       <SiteFooter
         id="footer"

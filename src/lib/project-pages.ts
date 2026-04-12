@@ -76,7 +76,7 @@ type ProjectStub = {
 };
 
 const projectOrder: ProjectStub[] = [
-  { slug: "adaps-it", title: "Adaps", year: "2026" },
+  { slug: "adaps", title: "Adaps", year: "2025" },
   {
     slug: "sanctuary-in-the-woods",
     title: "Sanctuary in the Woods",
@@ -87,9 +87,9 @@ const projectOrder: ProjectStub[] = [
   { slug: "elora", title: "Elora", year: "2025" },
   { slug: "one-downtown", title: "One Downtown", year: "2024" },
   { slug: "charminar-gin", title: "Charminar Gin", year: "2025" },
-  { slug: "snn-raj-corp", title: "SNN Raj Corp", year: "2026" },
-  { slug: "rydon", title: "Rydon", year: "2025" },
-  { slug: "loyola-viscomm", title: "Loyola Viscomm", year: "2025" },
+  { slug: "snn-raj-corp", title: "SNN Raj Corp", year: "2022" },
+  { slug: "rydon", title: "Rydon", year: "2023" },
+  { slug: "viscomm", title: "Loyola Viscomm", year: "2021" },
   { slug: "nhempco", title: "Nhempco", year: "2021" },
   { slug: "e5-hospitality", title: "E5 Hospitality", year: "2024" },
   { slug: "totspot", title: "Totspot", year: "2021" },
@@ -103,7 +103,7 @@ const projectOrder: ProjectStub[] = [
 ];
 
 const workCaseStudyOrder: ProjectStub[] = [
-  { slug: "adaps-it", title: "Adaps", year: "2026" },
+  { slug: "adaps", title: "Adaps", year: "2025" },
   {
     slug: "sanctuary-in-the-woods",
     title: "Sanctuary in the Woods",
@@ -112,9 +112,9 @@ const workCaseStudyOrder: ProjectStub[] = [
   { slug: "elora", title: "Elora", year: "2025" },
   { slug: "helios-stones", title: "Helios", year: "2024" },
   { slug: "one-downtown", title: "One Downtown", year: "2024" },
-  { slug: "loyola-viscomm", title: "Loyola Viscomm", year: "2025" },
-  { slug: "snn-raj-corp", title: "SNN Raj Corp", year: "2026" },
-  { slug: "rydon", title: "Rydon", year: "2025" },
+  { slug: "viscomm", title: "Loyola Viscomm", year: "2021" },
+  { slug: "snn-raj-corp", title: "SNN Raj Corp", year: "2022" },
+  { slug: "rydon", title: "Rydon", year: "2023" },
   { slug: "nhempco", title: "Nhempco", year: "2021" },
   { slug: "totspot", title: "Totspot", year: "2021" },
   { slug: "e5-hospitality", title: "E5 Hospitality", year: "2024" },
@@ -136,7 +136,7 @@ const nextProjectPreviewFallback: Record<
     | "logoAlt"
   >
 > = {
-  "adaps-it": {
+  adaps: {
     videoSrc: "/thumbnails/Adaps.mp4",
     imageAlt: "Adaps IT preview video",
   },
@@ -156,7 +156,7 @@ const nextProjectPreviewFallback: Record<
     imageSrc: "/videos/thumbnails/onedowntown.png",
     imageAlt: "One Downtown preview",
   },
-  "loyola-viscomm": {
+  "viscomm": {
     videoSrc: "/thumbnails/Viscomm.mp4",
     imageAlt: "Loyola Viscomm preview",
   },
@@ -199,9 +199,9 @@ const nextProjectPreviewFallback: Record<
 };
 
 const adapsPage: ProjectPageData = {
-  slug: "adaps-it",
+  slug: "adaps",
   title: "Adaps",
-  year: "2026",
+  year: "2025",
   intro: [
     "With over 60 years shaping Australia’s technology landscape, ADAPS stands as the nation’s oldest, most trusted IT partner. Their legacy of innovation, industry partnerships, and enduring client relationships set the stage for a new challenge: to evolve their visual identity while honouring their heritage and reinforcing their reputation with today’s decision-makers.",
     "This project wasn’t about starting over, it was about carefully bridging six decades of trust with a sophisticated new visual language that would propel Adaps confidently into the future.",
@@ -523,7 +523,7 @@ const eloraPage: ProjectPageData = {
   ],
   year: "2025",
   facts: [
-    { label: "Client", value: "Lansum and Golckonda Developers" },
+    { label: "Client", value: "LANSUM GOLKONDA Developers" },
     { label: "Studio/Team", value: "Studio 318 India" },
     { label: "My Role", value: "Lead Designer on the Project" },
   ],
@@ -542,6 +542,7 @@ const eloraPage: ProjectPageData = {
       id: "elora-2",
       type: "video",
       src: "/Elora/2.mp4",
+      bordered: true,
     },
     {
       id: "elora-3",
@@ -572,6 +573,7 @@ const eloraPage: ProjectPageData = {
       type: "image",
       src: "/Elora/7.png",
       alt: "Elora media 7",
+      bordered: true,
     },
     {
       id: "elora-8",
@@ -589,6 +591,7 @@ const eloraPage: ProjectPageData = {
       type: "image",
       src: "/Elora/10.png",
       alt: "Elora media 10",
+      bordered: true,
     },
     {
       id: "elora-11",
@@ -662,6 +665,8 @@ const eloraPage: ProjectPageData = {
       alt: "Elora media 22",
     },
   ],
+  summary:
+    "The challenge was not to make it look premium, but to make it feel certain. To move away from decorative luxury and towards something more enduring, structure, clarity, and quiet confidence. In the end, the project became less about branding a building, and more about defining a standard.",
   nextProject: {
     slug: "charminar-gin",
     title: "Charminar Gin",
@@ -844,7 +849,7 @@ const heliosPage: ProjectPageData = {
     },
   ],
   summary:
-    "The Helios system brings motion, image-making, and refined brand surfaces together into a cohesive luxury presentation.",
+    "Helios identity project marks a significant milestone in redefining the brand’s presence in stone industry. The final design is a reflection of helios’ dedicated to quality, sprawling atelier, and innate timelessness.",
   nextProject: {
     slug: "one-downtown",
     title: "One Downtown",
@@ -856,7 +861,7 @@ const heliosPage: ProjectPageData = {
 const rydonPage: ProjectPageData = {
   slug: "rydon",
   title: "Rydon",
-  year: "2025",
+  year: "2023",
   intro: [
     "For 33+ years, Rydon has been keeping up with a demanding world, innovating ceaselessly to become one of India's prominent providers of power transmission solutions. By rebranding them, we found the sweet spot between old and new to give them an identity that was modern, but traditionally grounded in who they have been for over 3 decades.",
   ],
@@ -989,19 +994,19 @@ const rydonPage: ProjectPageData = {
     },
   ],
   summary:
-    "The Rydon presentation combines updated motion assets and refreshed stills into a single cohesive rollout sequence.",
+    "The final outcome encompassed a strategically rebranded identity and enhanced packaging design. The transformation is not only visual but a testament to Rydon's commitment to progress and excellence.",
   nextProject: {
-    slug: "loyola-viscomm",
+    slug: "viscomm",
     title: "Loyola Viscomm",
     category: "Brand Identity Design",
-    year: "2025",
+    year: "2021",
   },
 };
 
 const loyolaViscommPage: ProjectPageData = {
-  slug: "loyola-viscomm",
+  slug: "viscomm",
   title: "Loyola Viscomm",
-  year: "2025",
+  year: "2021",
   intro: [
     "The department of visual communication at Andhra Loyola is the first in Andhra Pradesh to offer a UG degree in creative disciplines taught by a faculty comprising artists, writers, photographers, and designers. In my final year graduation, I was asked to re-design the viscomm department visual identity to bring more clarity and consistency for the department's visual language. I designed a simple and strong monogram that improves the recognizability of the Viscomm department.",
   ],
@@ -1140,7 +1145,7 @@ const loyolaViscommPage: ProjectPageData = {
     },
   ],
   summary:
-    "The Loyola Viscomm system brings motion and still-media storytelling into one cohesive visual presentation.",
+    "Having a simple monogram with a clean typeface makes it look modern, represents the personality of the viscomm department. Using a clear graphic identity helped Viscomm to communicate more effectively and consistently across their communication collaterals.",
   nextProject: {
     slug: "nhempco",
     title: "Nhempco",
@@ -1252,7 +1257,7 @@ const nhempco2021Page: ProjectPageData = {
     },
   ],
   summary:
-    "The Nhempco project now presents its full visual sequence across motion and static media inside the shared case-study layout.",
+    "I used the natural meaning of a hemp leaf while designing the logo mark for NHEMP CO. However, I added a distinctive touch by putting a tiny drop at the top, elevating it among the conventional leaf logos. This distinguishing feature conveys the essence of the brand in a memorable way.",
   nextProject: {
     slug: "e5-hospitality",
     title: "E5 Hospitality",
@@ -1429,7 +1434,7 @@ const totspot2021Page: ProjectPageData = {
     },
   ],
   summary:
-    "The Totspot system brings together logo construction, multilingual identity work, and a flexible screen language into one cohesive brand story.",
+    "The Totspot Brand Identity captured the essence of the brand and connected with both kids and parents. The fun and colorful design elements and typography created an engaging brand image, while the clean and simple layouts conveyed a trustworthy and professional look.",
   nextProject: {
     slug: "ace-dellago",
     title: "ACE Dellago",
@@ -1453,6 +1458,7 @@ const aceDellagoPage: ProjectPageData = {
   ],
   hero: {
     backgroundColor: "#d1d2d6",
+    backgroundImageSrc: "/thumbnails/DelLago.png",
     hideFallbackTitle: true,
   },
   sections: [],
@@ -1543,10 +1549,10 @@ const parenthesesShowreelPage: ProjectPageData = {
   sections: [],
   summary: "Showreel",
   nextProject: {
-    slug: "adaps-it",
+    slug: "adaps",
     title: "Adaps",
     category: "Brand Identity Design",
-    year: "2026",
+    year: "2025",
   },
 };
 
@@ -1574,7 +1580,7 @@ const charminarGinPage: ProjectPageData = {
     slug: "snn-raj-corp",
     title: "SNN Raj Corp",
     category: "Brand Identity Design",
-    year: "2026",
+    year: "2022",
   },
 };
 
@@ -1717,7 +1723,7 @@ const oneDowntown2024Page: ProjectPageData = {
     },
   ],
   summary:
-    "The One Downtown sequence brings together motion and still rollout assets into a single long-form presentation.",
+    "One Downtown project brought together thoughtful design across various mediums, from the publication to the impressive sitewraps. The sitewraps, in particular, have already become a talking point across Hyderabad, creating a strong visual impact and generating buzz for the project.",
   nextProject: {
     slug: "charminar-gin",
     title: "Charminar Gin",
@@ -1729,7 +1735,7 @@ const oneDowntown2024Page: ProjectPageData = {
 const snnRajCorp2026Page: ProjectPageData = {
   slug: "snn-raj-corp",
   title: "SNN Raj Corp",
-  year: "2026",
+  year: "2022",
   intro: [
     "SNN Raj Corp looked like they had it all. 6000+ happy customers, prominence in the real estate industry, several cutting-edge projects in the works. But they felt misaligned with their brand identity, and wanted it to reflect the high standards they set for themselves, and resonate with their audience.",
   ],
@@ -1835,12 +1841,12 @@ const snnRajCorp2026Page: ProjectPageData = {
     },
   ],
   summary:
-    "The SNN Raj Corp sequence brings together screen-based motion and still-image brand communication into one consolidated rollout.",
+    "SNN Raj Corp has now embraced an identity that mirrors its vision and ethos, marking the new era of growth in construction and design.",
   nextProject: {
     slug: "rydon",
     title: "Rydon",
     category: "Brand Identity Design",
-    year: "2025",
+    year: "2023",
   },
 };
 

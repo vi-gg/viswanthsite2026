@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { InViewDualText } from "@/components/in-view-dual-text";
 import { ShowreelPlayer } from "@/components/showreel-player";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNavbar } from "@/components/site-navbar";
@@ -28,11 +29,11 @@ type WorkItem = {
 
 const workItems: WorkItem[] = [
   {
-    id: "adaps-it",
+    id: "adaps",
     title: "Adaps IT",
     description:
       "Shaping Adaps’ visual identity for the next era of australian technology",
-    href: "/project/adaps-it",
+    href: "/project/adaps",
     bgColor: "#056cf2",
     videoSrc: "/thumbnails/Adaps.mp4",
     posterSrc: "/videos/posters/Adaps.jpg",
@@ -109,7 +110,9 @@ export default function Home() {
 
       <section className={styles.workSection}>
         <div className={styles.container}>
-          <h1 className={styles.workTitle}>WORK</h1>
+          <h1 className={styles.workTitle}>
+            <InViewDualText text="WORK" />
+          </h1>
           <p className={styles.workSubtitle}>
             Partnering with visionary brands to build meaningful identities that
             solve real problems, inspire people, and enhance experiences.
@@ -169,7 +172,9 @@ export default function Home() {
 
       <section id="frames" className={styles.framesSection}>
         <div className={styles.container}>
-          <h2 className={styles.framesTitle}>FRAMES</h2>
+          <h2 className={styles.framesTitle}>
+            <InViewDualText text="FRAMES" />
+          </h2>
           <p className={styles.framesSubtitle}>
             My experiments with type, motion design, design concepts that did
             not make the final cut and fun explorations.

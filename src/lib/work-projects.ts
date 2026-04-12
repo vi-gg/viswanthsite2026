@@ -13,9 +13,9 @@ export type WorkProjectCard = {
 
 export const workProjects: WorkProjectCard[] = [
   {
-    id: "adaps-it",
-    label: "Adaps IT | 2026",
-    href: "/project/adaps-it",
+    id: "adaps",
+    label: "Adaps IT | 2025",
+    href: "/project/adaps",
     bgColor: "#056cf2",
     videoSrc: "/thumbnails/Adaps.mp4",
     posterSrc: "/videos/posters/Adaps.jpg",
@@ -48,21 +48,21 @@ export const workProjects: WorkProjectCard[] = [
     imageAlt: "One Downtown brochure artwork",
   },
   {
-    id: "loyola-viscomm",
-    label: "Loyola Viscomm | 2025",
-    href: "/project/loyola-viscomm",
+    id: "viscomm",
+    label: "Loyola Viscomm | 2021",
+    href: "/project/viscomm",
     videoSrc: "/thumbnails/Viscomm.mp4",
     imageAlt: "Loyola Viscomm thumbnail artwork",
   },
   {
     id: "snn-raj-corp",
-    label: "SNN Raj Corp | 2026",
+    label: "SNN Raj Corp | 2022",
     href: "/project/snn-raj-corp",
     videoSrc: "/thumbnails/SNN.mp4",
   },
   {
     id: "rydon",
-    label: "Rydon | 2025",
+    label: "Rydon | 2023",
     href: "/project/rydon",
     videoSrc: "/thumbnails/Rydon.mp4",
     imageAlt: "Rydon packaging artwork",
@@ -106,7 +106,7 @@ export const workProjects: WorkProjectCard[] = [
     id: "charminar-gin",
     label: "Charminar Gin | 2025",
     href: "/project/charminar-gin",
-    imageSrc: "/thumbnails/Charminar.png",
+    imageSrc: "/charminar-gin/charminar-cover.png",
     imageAlt: "Charminar Gin cover artwork",
   },
   {

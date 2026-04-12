@@ -59,10 +59,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     project.sections.length === 0 &&
     project.summary?.trim().toLowerCase() === "coming soon";
   const isParenthesesShowreel = project.slug === "parentheses-showreel";
-  const enableMediaArranger = true;
+  const isElora = project.slug === "elora";
+  const enableMediaArranger = false;
 
   return (
-    <main className={styles.page}>
+    <main className={`${styles.page} ${isElora ? styles.pageElora : ""}`}>
       <SiteNavbar
         leftLinks={leftNavLinks}
         rightLinks={rightNavLinks}
@@ -231,7 +232,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   className={styles.nextProjectMedia}
                 >
                   <video autoPlay muted loop playsInline preload="none">
-                    <source src={project.nextProject.videoSrc} type="video/mp4" />
+                    <source
+                      src={project.nextProject.videoSrc}
+                      type="video/mp4"
+                    />
                   </video>
                 </Link>
               ) : project.nextProject.imageSrc ? (
