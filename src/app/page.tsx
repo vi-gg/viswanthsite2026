@@ -52,8 +52,7 @@ const workItems: WorkItem[] = [
   {
     id: "elora",
     title: "Elora",
-    description:
-      "Crafting a brochure that feels more like a journey through the place, rather than a pitch.",
+    description: "Defining a new standard for how business takes shape in vizag.",
     href: "/project/elora",
     imageSrc: "/thumbnails/Elora.png",
     imageAlt: "Elora artwork",
