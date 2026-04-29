@@ -53,7 +53,7 @@ export default function AboutPage() {
               <div className={styles.contentRight}>
                 <p>
                   A brand identity and motion designer based in Vijayawada. Over
-                  the last 4+ years, I&apos;ve had the opportunity to work with
+                  the last 5+ years, I&apos;ve had the opportunity to work with
                   design studios, founders, and creative teams across India,
                   collaborating closely to build brand identities that are not
                   just visually strong, but strategically grounded and
